@@ -1,0 +1,7 @@
+
+*.scssc
+
+dist/*
+node_modules/*
+src/bower_components/*
+

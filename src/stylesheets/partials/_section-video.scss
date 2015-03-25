@@ -1,0 +1,22 @@
+.videos {
+  @extend %grid;
+}
+
+.video {
+  @extend %grid__item;
+  @extend %xl--one-third;
+}
+
+
+.video__title {
+  margin-bottom: 5px;
+}
+
+.video__box {
+  background: black;
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding-bottom: 50%;
+  margin-bottom: 5px;
+}

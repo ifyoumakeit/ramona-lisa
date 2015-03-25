@@ -1,0 +1,38 @@
+/*=====================================
+=            GRID SETTINGS            =
+=====================================*/
+
+$responsive:            true!default;
+$mobile-first:          true!default;
+$gutter:                12px!default;
+$use-silent-classes:    true!default;
+$push:                  false!default;
+$pull:                  false!default;
+$use-markup-fix:        false!default;
+
+$breakpoints: (
+    's' '(max-width: 480px)',
+    'm' '(min-width: 481px) and (max-width: 1023px)',
+    'l' '(max-width: 1023px)',
+    'xl' '(min-width: 1024px)'
+)!default;
+
+$breakpoint-has-widths: ('s', 'm', 'l', 'xl')!default;
+$breakpoint-has-push:   ('s', 'm', 'l', 'xl')!default;
+$breakpoint-has-pull:   ('s', 'm', 'l', 'xl')!default;
+
+/*==============================
+=            COLORS            =
+==============================*/
+
+$color-primary: #ff0000;
+$color-secondary: #00ff00;
+$color-bg: #efefef;
+$color-border: #ddd;
+
+/*=============================
+=            SIZES            =
+=============================*/
+
+$border-width: 5px;
+$blur-width: 10px;

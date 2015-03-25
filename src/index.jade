@@ -1,0 +1,82 @@
+doctype
+html.no-js
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Dyno
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel="stylesheet", href="stylesheets/main.css")
+    script(src="//code.jquery.com/jquery-2.1.3.min.js")
+    script(src="scripts/app.js")
+  body
+    <!--[if lt IE 8]>
+    p.browsehappy
+      | You are using an <strong>outdated</strong> browser.
+      | Please <a href="http://browsehappy.com/">upgrade your browser</a>
+      | to improve your experience.
+    <![endif]-->
+
+    nav.navigation
+      ul.navigation__items
+        li.navigation__item
+          a.navigation__link(href='#top') home
+        li.navigation__item
+          a.navigation__link(href='#music') music
+        li.navigation__item
+          a.navigation__link(href='#lyrics') lyrics
+        li.navigation__item
+          a.navigation__link(href='#about') about
+        li.navigation__item
+          a.navigation__link(href='#photo') photo
+        li.navigation__item
+          a.navigation__link(href='#video') video
+        li.navigation__item
+          a.navigation__link(href='#choreography') choreography
+        li.navigation__item
+          a.navigation__link(href='#performance') performance
+        li.navigation__item
+          a.navigation__link(href='#contact') contact
+
+    main
+      section.section.section--home
+        .section__container
+          include partials/home
+
+      section.section.section--music
+        .section__container
+          include partials/music
+
+      section.section.section--lyrics
+        .section__container
+          include partials/lyrics
+
+      section.section.section--about
+        .section__container
+          include partials/about
+
+      section.section.section--photo
+        .section__container
+          include partials/photo
+
+      section.section.section--video
+        .section__container
+          include partials/video
+
+      section.section.section--choreography
+        .section__container
+          include partials/choreography
+
+      section.section.section--performance
+        .section__container
+          include partials/performance
+
+  //- Google Analytics: change UA-XXXXX-X to be your site's ID.
+  //-
+    script
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');

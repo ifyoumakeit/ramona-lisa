@@ -1,0 +1,12 @@
+.photos {
+  @extend %grid;
+}
+
+.photo {
+  @extend %grid__item;
+  @extend %xl--one-third;
+}
+
+.photo__image {
+  max-width: 100%;
+}

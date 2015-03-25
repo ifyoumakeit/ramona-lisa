@@ -1,0 +1,107 @@
+.section {
+  width: 100%;
+  text-align: center;
+  position: relative;
+
+  &:nth-child(odd){
+    background: $color-bg;
+  }
+
+  &:after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: -$blur-width;
+    right: -$blur-width;
+    bottom: -$blur-width;
+    left: -$blur-width;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur($blur-width);
+  }
+}
+
+@include grid-media-query('xl'){
+  .section:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 100%;
+    min-height: inherit;
+    max-height: inherit;
+    padding: 0;
+  }
+
+  .section__container {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.section__container {
+  text-align: left;
+  width: 90%;
+  max-width: 960px;
+  margin: 20px auto 0;
+}
+
+.section__title {
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: bold;
+  color: rgba($color-primary,0.5);
+  transform: rotate(-3deg);
+
+  word-break: break-all;
+
+  @include grid-media-query('xl'){
+    font-size: 8rem;
+  }
+}
+
+.section__body {
+  padding-top: 1rem;
+}
+
+
+/*==============================
+=            CUSTOM            =
+==============================*/
+
+/*
+.section--home:after {
+  background-image: url(//placekitten.com/g/1200/600);
+}
+
+.section--music:after {
+  background-image: url(//placekitten.com/g/1200/700);
+}
+
+.section--lyrics:after {
+  background-image: url(//placekitten.com/g/1200/800);
+}
+
+.section--about:after {
+  background-image: url(//placekitten.com/g/1200/900);
+}
+
+.section--photo:after {
+  background-image: url(//placekitten.com/g/1200/1000);
+}
+
+.section--video:after {
+  background-image: url(//placekitten.com/g/700/1100);
+}
+
+.section--choreography:after {
+  background-image: url(//placekitten.com/g/2000/2000);
+}
+
+.section--performance:after {
+  background-image: url(//placekitten.com/g/1200/1200);
+}
+*/

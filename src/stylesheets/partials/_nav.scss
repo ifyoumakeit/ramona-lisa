@@ -1,0 +1,59 @@
+.navigation {
+
+  font-size: 1.6rem;
+  line-height: 1.5;
+  border-top: 5px $color-primary solid;
+
+  @include grid-media-query('xl'){
+
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 15px;
+
+    font-size: 1.2rem;
+    line-height: 1;
+
+    border-top: 0;
+    border-left: 5px $color-primary solid;
+
+    background: $color-primary;
+
+  }
+}
+
+.navigation__items {
+  padding: 0;
+  margin: 0;
+}
+
+.navigation__item {
+  list-style: none;
+  background: $color-bg;
+  padding: 5px;
+  border-top: 1px rgba(255,255,255,0.75) solid;
+  border-bottom: 1px rgba(0,0,0,0.1) solid;
+
+  @include grid-media-query('xl'){
+    background: rgba(0,0,0,0.4);
+    border: 0;
+    color: white;
+
+    &:hover {
+      background: rgba(0,0,0,0.6);
+    }
+
+  }
+}
+
+.navigation__link {
+  display: block;
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  text-shadow: 0 0 1px black;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
