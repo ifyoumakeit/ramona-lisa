@@ -1,0 +1,851 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+/*=====================================
+=            GRID SETTINGS            =
+=====================================*/
+/*==============================
+=            COLORS            =
+==============================*/
+/*=============================
+=            SIZES            =
+=============================*/
+/*------------------------------------*\
+    $CSSWIZARDRY-GRIDS
+\*------------------------------------*/
+/**
+ * CONTENTS
+ * INTRODUCTION.........How the grid system works.
+ * VARIABLES............Your settings.
+ * MIXINS...............Library mixins.
+ * GRID SETUP...........Build the grid structure.
+ * WIDTHS...............Build our responsive widths around our breakpoints.
+ * PUSH.................Push classes.
+ * PULL.................Pull classes.
+ */
+/*------------------------------------*\
+    $INTRODUCTION
+\*------------------------------------*/
+/**
+ * csswizardry grids provides you with widths to suit a number of breakpoints
+ * designed around devices of a size you specify. Out of the box, csswizardry
+ * grids caters to the following types of device:
+ *
+ * palm     --  palm-based devices, like phones and small tablets
+ * lap      --  lap-based devices, like iPads or laptops
+ * portable --  all of the above
+ * desk     --  stationary devices, like desktop computers
+ * regular  --  any/all types of device
+ *
+ * These namespaces are then used in the library to give you the ability to
+ * manipulate your layouts based around them, for example:
+ *
+   <div class="grid__item  one-whole  lap--one-half  desk--one-third">
+ *
+ * This would give you a grid item which is 100% width unless it is on a lap
+ * device, at which point it become 50% wide, or it is on a desktop device, at
+ * which point it becomes 33.333% width.
+ *
+ * csswizardry grids also has push and pull classes which allow you to nudge
+ * grid items left and right by a defined amount. These follow the same naming
+ * convention as above, but are prepended by either `push--` or `pull--`, for
+ * example:
+ *
+   `class="grid__item  one-half  push--one-half"`
+ *
+ * This would give you a grid item which is 50% width and pushed over to the
+ * right by 50%.
+ *
+ * All classes in csswizardry grids follow this patten, so you should fairly
+ * quickly be able to piece together any combinations you can imagine, for
+ * example:
+ *
+   `class="grid__item  one-whole  lap--one-half  desk--one-third  push--desk--one-third"`
+ *
+   `class="grid__item  one-quarter  palm--one-half  push--palm--one-half"`
+ *
+   `class="grid__item  palm--one-third  desk--five-twelfths"`
+ */
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+/**
+ * If you are building a non-responsive site but would still like to use
+ * csswizardry-grids, set this to ‘false’:
+ */
+/**
+ * Is this build mobile first? Setting to ‘true’ means that all grids will be
+ * 100% width if you do not apply a more specific class to them.
+ */
+/**
+ * Set the spacing between your grid items.
+ */
+/**
+ * Would you like Sass’ silent classes, or regular CSS classes?
+ */
+/**
+ * Would you like push and pull classes enabled?
+ */
+/**
+ * Using `inline-block` means that the grid items need their whitespace removing
+ * in order for them to work correctly. Set the following to true if you are
+ * going to achieve this by manually removing/commenting out any whitespace in
+ * your HTML yourself.
+ *
+ * Setting this to false invokes a hack which cannot always be guaranteed,
+ * please see the following for more detail:
+ *
+ * github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
+ * github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
+ */
+/**
+ * Define your breakpoints. The first value is the prefix that shall be used for
+ * your classes (e.g. `.palm--one-half`), the second value is the media query
+ * that the breakpoint fires at.
+ */
+/**
+ * Define which namespaced breakpoints you would like to generate for each of
+ * widths, push and pull. This is handy if you only need pull on, say, desk, or
+ * you only need a new width breakpoint at mobile sizes. It allows you to only
+ * compile as much CSS as you need. All are turned on by default, but you can
+ * add and remove breakpoints at will.
+ *
+ * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
+ * have been set to ‘true’.
+ */
+/**
+ * You do not need to edit anything from this line onward; csswizardry-grids is
+ * good to go. Happy griddin’!
+ */
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/**
+ * These mixins are for the library to use only, you should not need to modify
+ * them at all.
+ *
+ * Enclose a block of code with a media query as named in `$breakpoints`.
+ */
+/**
+ * Drop relative positioning into silent classes which can’t take advantage of
+ * the `[class*="push--"]` and `[class*="pull--"]` selectors.
+ */
+/*------------------------------------*\
+    $GRID SETUP
+\*------------------------------------*/
+/**
+ * 1. Allow the grid system to be used on lists.
+ * 2. Remove any margins and paddings that might affect the grid system.
+ * 3. Apply a negative `margin-left` to negate the columns’ gutters.
+ */
+/* line 213, ../../src/bower_components/csswizardry-grids/csswizardry-grids.scss */
+.albums, .videos, .photos {
+  list-style: none;
+  /* [1] */
+  margin: 0;
+  /* [2] */
+  padding: 0;
+  /* [2] */
+  margin-left: -12px;
+  /* [3] */
+  letter-spacing: -0.31em;
+}
+
+/* Opera hack */
+/* line 225, ../../src/bower_components/csswizardry-grids/csswizardry-grids.scss */
+.opera:-o-prefocus,
+.albums,
+.videos,
+.photos {
+  word-spacing: -0.43em;
+}
+
+/**
+ * 1. Cause columns to stack side-by-side.
+ * 2. Space columns apart.
+ * 3. Align columns to the tops of each other.
+ * 4. Full-width unless told to behave otherwise.
+ * 5. Required to combine fluid widths and fixed gutters.
+ */
+/* line 239, ../../src/bower_components/csswizardry-grids/csswizardry-grids.scss */
+.album, .video, .photo {
+  display: inline-block;
+  /* [1] */
+  padding-left: 12px;
+  /* [2] */
+  vertical-align: top;
+  /* [3] */
+  width: 100%;
+  /* [4] */
+  /* [5] */
+  /* [5] */
+  box-sizing: border-box;
+  /* [5] */
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
+/**
+ * Reversed grids allow you to structure your source in the opposite order to
+ * how your rendered layout will appear. Extends `.grid`.
+ */
+/**
+ * Gutterless grids have all the properties of regular grids, minus any spacing.
+ * Extends `.grid`.
+ */
+/**
+ * Align the entire grid to the right. Extends `.grid`.
+ */
+/**
+ * Centered grids align grid items centrally without needing to use push or pull
+ * classes. Extends `.grid`.
+ */
+/**
+ * Align grid cells vertically (`.grid--middle` or `.grid--bottom`). Extends
+ * `.grid`.
+ */
+/**
+ * Create grids with narrower gutters. Extends `.grid`.
+ */
+/**
+ * Create grids with wider gutters. Extends `.grid`.
+ */
+/*------------------------------------*\
+    $WIDTHS
+\*------------------------------------*/
+/**
+ * Create our width classes, prefixed by the specified namespace.
+ */
+/**
+ * Our regular, non-responsive width classes.
+ */
+/**
+ * Whole
+ */
+/**
+ * Halves
+ */
+/**
+ * Thirds
+ */
+/**
+ * Quarters
+ */
+/**
+ * Fifths
+ */
+/**
+ * Sixths
+ */
+/**
+ * Eighths
+ */
+/**
+ * Tenths
+ */
+/**
+ * Twelfths
+ */
+/**
+ * Our responsive classes, if we have enabled them.
+ */
+@media only screen and (max-width: 480px) {
+  /**
+   * Whole
+   */
+  /**
+   * Halves
+   */
+  /**
+   * Thirds
+   */
+  /**
+   * Quarters
+   */
+  /**
+   * Fifths
+   */
+  /**
+   * Sixths
+   */
+  /**
+   * Eighths
+   */
+  /**
+   * Tenths
+   */
+  /**
+   * Twelfths
+   */
+}
+@media only screen and (min-width: 481px) and (max-width: 1023px) {
+  /**
+   * Whole
+   */
+  /**
+   * Halves
+   */
+  /**
+   * Thirds
+   */
+  /**
+   * Quarters
+   */
+  /**
+   * Fifths
+   */
+  /**
+   * Sixths
+   */
+  /**
+   * Eighths
+   */
+  /**
+   * Tenths
+   */
+  /**
+   * Twelfths
+   */
+}
+@media only screen and (max-width: 1023px) {
+  /**
+   * Whole
+   */
+  /**
+   * Halves
+   */
+  /**
+   * Thirds
+   */
+  /**
+   * Quarters
+   */
+  /**
+   * Fifths
+   */
+  /**
+   * Sixths
+   */
+  /**
+   * Eighths
+   */
+  /**
+   * Tenths
+   */
+  /**
+   * Twelfths
+   */
+}
+@media only screen and (min-width: 1024px) {
+  /**
+   * Whole
+   */
+  /**
+   * Halves
+   */
+  /**
+   * Thirds
+   */
+  /* line 379, ../../src/bower_components/csswizardry-grids/csswizardry-grids.scss */
+  .video, .photo {
+    width: 33.333%;
+  }
+
+  /**
+   * Quarters
+   */
+  /* line 386, ../../src/bower_components/csswizardry-grids/csswizardry-grids.scss */
+  .album {
+    width: 25%;
+  }
+
+  /**
+   * Fifths
+   */
+  /**
+   * Sixths
+   */
+  /**
+   * Eighths
+   */
+  /**
+   * Tenths
+   */
+  /**
+   * Twelfths
+   */
+}
+/*------------------------------------*\
+    $PUSH
+\*------------------------------------*/
+/**
+ * Push classes, to move grid items over to the right by certain amounts.
+ */
+/*------------------------------------*\
+    $PULL
+\*------------------------------------*/
+/**
+ * Pull classes, to move grid items back to the left by certain amounts.
+ */
+/* line 1, ../../src/stylesheets/partials/_base.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 5, ../../src/stylesheets/partials/_base.scss */
+html {
+  font-size: 62.5%;
+}
+
+/* line 9, ../../src/stylesheets/partials/_base.scss */
+body {
+  margin: 0;
+  background: #d2ddd6;
+  padding: 5px;
+  color: #11546e;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.625;
+  position: relative;
+}
+@media only screen and (min-width: 1024px) {
+  /* line 9, ../../src/stylesheets/partials/_base.scss */
+  body {
+    padding: 0 0 0 150px;
+  }
+}
+
+/* line 25, ../../src/stylesheets/partials/_base.scss */
+a {
+  color: #b88c88;
+}
+
+/* line 1, ../../src/stylesheets/partials/_nav.scss */
+.navigation {
+  width: 150px;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  overflow: hidden;
+  position: fixed;
+  z-index: 10;
+  left: -100%;
+  top: 0;
+  bottom: 0;
+  border-left: 1px #11546e solid;
+  padding-top: 10px;
+}
+@media only screen and (min-width: 1024px) {
+  /* line 1, ../../src/stylesheets/partials/_nav.scss */
+  .navigation {
+    left: 5px;
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+}
+
+/* line 24, ../../src/stylesheets/partials/_nav.scss */
+.navigation__header {
+  width: 90%;
+  margin-bottom: 10px;
+  display: none;
+}
+@media only screen and (min-width: 1024px) {
+  /* line 24, ../../src/stylesheets/partials/_nav.scss */
+  .navigation__header {
+    display: block;
+  }
+}
+
+/* line 34, ../../src/stylesheets/partials/_nav.scss */
+.navigation__items {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 39, ../../src/stylesheets/partials/_nav.scss */
+.navigation__item {
+  list-style: none;
+}
+
+/* line 43, ../../src/stylesheets/partials/_nav.scss */
+.navigation__link {
+  background-color: #d2ddd6;
+  padding: 5px;
+  margin: 2px 2px 2px 0;
+  display: inline-block;
+  color: #11546e;
+  text-decoration: none;
+  position: relative;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  border: 1px #11546e solid;
+  border-left-width: 0;
+  -webkit-transform: skewY(-5deg);
+  transform: skewY(-5deg);
+}
+/* line 60, ../../src/stylesheets/partials/_nav.scss */
+.navigation__link:after {
+  z-index: -1;
+  font-weight: bold;
+  content: "\203A";
+  position: absolute;
+  right: 1px;
+  top: -1px;
+  border: 1px #11546e solid;
+  border-left-width: 0;
+  padding: 5px;
+  color: #d2ddd6;
+  transition: right 0.5s;
+}
+/* line 74, ../../src/stylesheets/partials/_nav.scss */
+.navigation__link:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+/* line 77, ../../src/stylesheets/partials/_nav.scss */
+.navigation__link:hover:after {
+  color: #11546e;
+  right: -15px;
+}
+
+/* line 84, ../../src/stylesheets/partials/_nav.scss */
+.navigation__toggle {
+  cursor: pointer;
+  z-index: 99;
+  position: fixed;
+  padding-left: 1.25em;
+  top: 5px;
+  right: 5px;
+  width: 1em;
+  height: 1em;
+}
+/* line 94, ../../src/stylesheets/partials/_nav.scss */
+.navigation__toggle:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 1em;
+  height: 0.15em;
+  background: white;
+  box-shadow: 0 0.25em 0 0 white, 0 0.5em 0 0 white;
+}
+@media only screen and (min-width: 1024px) {
+  /* line 84, ../../src/stylesheets/partials/_nav.scss */
+  .navigation__toggle {
+    display: none;
+  }
+}
+
+/* line 1, ../../src/stylesheets/partials/_section.scss */
+.section {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+  transition: min-height 0.5s;
+  opacity: 0;
+}
+/* line 10, ../../src/stylesheets/partials/_section.scss */
+.section:after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 28, ../../src/stylesheets/partials/_section.scss */
+  .section:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 100%;
+    min-height: inherit;
+    max-height: inherit;
+    padding: 0;
+  }
+
+  /* line 39, ../../src/stylesheets/partials/_section.scss */
+  .section__container {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+/* line 45, ../../src/stylesheets/partials/_section.scss */
+.section__container {
+  text-align: left;
+  width: 90%;
+  max-width: 960px;
+  margin: 20px auto 0;
+}
+
+/* line 53, ../../src/stylesheets/partials/_section.scss */
+.section__title {
+  position: relative;
+  text-transform: uppercase;
+  border-left: 1px #11546e solid;
+  border-bottom: 1px #11546e solid;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  line-height: 1;
+  font-weight: bold;
+  color: #11546e;
+  word-break: break-all;
+  margin-bottom: 2rem;
+  padding: 0 0 5px 5px;
+}
+/* line 67, ../../src/stylesheets/partials/_section.scss */
+.section__title:before {
+  position: relative;
+  display: inline-block;
+  border-right: 1px #11546e solid;
+  padding-right: 5px;
+  margin-right: 5px;
+  margin-top: 1px;
+}
+/* line 76, ../../src/stylesheets/partials/_section.scss */
+.section__title:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 3px;
+  width: 100%;
+  background-image: linear-gradient(90deg, transparent 90%, #11546e 10%);
+  background-size: 10px 10px;
+}
+
+/* line 88, ../../src/stylesheets/partials/_section.scss */
+.section__body {
+  padding-top: 1rem;
+}
+
+/* line 92, ../../src/stylesheets/partials/_section.scss */
+.section--invert {
+  background: #050608;
+  color: #b88c88;
+}
+/* line 96, ../../src/stylesheets/partials/_section.scss */
+.section--invert .section__title {
+  color: #b88c88;
+  border-color: #b88c88;
+}
+/* line 99, ../../src/stylesheets/partials/_section.scss */
+.section--invert .section__title:before {
+  border-color: #b88c88;
+}
+/* line 103, ../../src/stylesheets/partials/_section.scss */
+.section--invert .section__title:after {
+  background-image: linear-gradient(90deg, transparent 90%, #b88c88 10%);
+}
+
+/*==============================
+=            CUSTOM            =
+==============================*/
+/* line 114, ../../src/stylesheets/partials/_section.scss */
+.section:nth-child(1) .section__title:before {
+  content: 'I';
+}
+
+/* line 115, ../../src/stylesheets/partials/_section.scss */
+.section:nth-child(2) .section__title:before {
+  content: 'II';
+}
+
+/* line 116, ../../src/stylesheets/partials/_section.scss */
+.section:nth-child(3) .section__title:before {
+  content: 'III';
+}
+
+/* line 117, ../../src/stylesheets/partials/_section.scss */
+.section:nth-child(4) .section__title:before {
+  content: 'IV';
+}
+
+/* line 118, ../../src/stylesheets/partials/_section.scss */
+.section:nth-child(5) .section__title:before {
+  content: 'V';
+}
+
+/* line 119, ../../src/stylesheets/partials/_section.scss */
+.section:nth-child(6) .section__title:before {
+  content: 'VI';
+}
+
+/* line 120, ../../src/stylesheets/partials/_section.scss */
+.section:nth-child(7) .section__title:before {
+  content: 'VII';
+}
+
+/* line 123, ../../src/stylesheets/partials/_section.scss */
+.section--home:after {
+  background-image: url(../images/face--down.jpg);
+}
+
+/*
+.section--music:after {
+  background-image: url(//placekitten.com/g/1200/700);
+}
+
+.section--lyrics:after {
+  background-image: url(//placekitten.com/g/1200/800);
+}
+
+.section--about:after {
+  background-image: url(//placekitten.com/g/1200/900);
+}
+
+.section--photo:after {
+  background-image: url(//placekitten.com/g/1200/1000);
+}
+
+.section--video:after {
+  background-image: url(//placekitten.com/g/700/1100);
+}
+
+.section--choreography:after {
+  background-image: url(//placekitten.com/g/2000/2000);
+}
+
+.section--performance:after {
+  background-image: url(//placekitten.com/g/1200/1200);
+}
+*/
+/* line 1, ../../src/stylesheets/partials/_section-home.scss */
+.section--home .section__container {
+  text-align: center;
+}
+
+/* line 5, ../../src/stylesheets/partials/_section-home.scss */
+.home__title {
+  font-size: 6rem;
+  color: white;
+  border: 1px white solid;
+  display: inline-block;
+  padding: 2px 5px;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+/* line 15, ../../src/stylesheets/partials/_section-home.scss */
+.home__bricks {
+  background: linear-gradient(135deg, transparent 22px, rgba(255, 255, 255, 0.025) 22px, rgba(255, 255, 255, 0.025) 24px, transparent 24px, transparent 67px, rgba(255, 255, 255, 0.025) 67px, rgba(255, 255, 255, 0.025) 69px, transparent 69px), linear-gradient(225deg, transparent 22px, rgba(255, 255, 255, 0.025) 22px, rgba(255, 255, 255, 0.025) 24px, transparent 24px, transparent 67px, rgba(255, 255, 255, 0.025) 67px, rgba(255, 255, 255, 0.025) 69px, transparent 69px) 0 64px;
+  background-size: 64px 128px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 11;
+}
+
+/* line 6, ../../src/stylesheets/partials/_section-music.scss */
+.album {
+  margin-bottom: 10px;
+}
+
+/* line 13, ../../src/stylesheets/partials/_section-music.scss */
+.album__artwork {
+  width: 100%;
+}
+
+/* line 17, ../../src/stylesheets/partials/_section-music.scss */
+.album__name {
+  display: inline-block;
+  font-weight: bold;
+  border: 1px #b88c88 solid;
+  padding: 5px;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+/* line 26, ../../src/stylesheets/partials/_section-music.scss */
+.album__links {
+  margin: 0 0 0 5px;
+  padding: 5px 0 0 0;
+  list-style: none;
+  text-align: left;
+  border-left: 1px #b88c88 solid;
+  display: block;
+}
+
+/* line 35, ../../src/stylesheets/partials/_section-music.scss */
+.album__link {
+  padding: 5px;
+  border: 1px #b88c88 solid;
+  border-left: 0;
+  font-size: 1rem;
+  margin-top: 2px;
+}
+@media only screen and (min-width: 1024px) {
+  /* line 35, ../../src/stylesheets/partials/_section-music.scss */
+  .album__link {
+    display: inline-block;
+  }
+}
+
+/* line 5, ../../src/stylesheets/partials/_section-video.scss */
+.video {
+  margin-bottom: 10px;
+}
+
+/* line 12, ../../src/stylesheets/partials/_section-video.scss */
+.video__title {
+  font-weight: bold;
+}
+
+/* line 16, ../../src/stylesheets/partials/_section-video.scss */
+.video__descr {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* line 21, ../../src/stylesheets/partials/_section-video.scss */
+.video__box {
+  border: 1px #11546e solid;
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin-bottom: 5px;
+}
+/* line 29, ../../src/stylesheets/partials/_section-video.scss */
+.video__box img {
+  background: black;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  border: 0;
+}
+
+/* line 5, ../../src/stylesheets/partials/_section-photo.scss */
+.photo {
+  margin-bottom: 5px;
+}
+
+/* line 12, ../../src/stylesheets/partials/_section-photo.scss */
+.photo__image {
+  border: 1px #11546e solid;
+  padding: 5px;
+  max-width: 100%;
+}
+
+/* line 18, ../../src/stylesheets/partials/_section-photo.scss */
+.photo__title {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}

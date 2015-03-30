@@ -3,6 +3,7 @@ _ = require "../bower_components/underscore/underscore-min"
 require "../bower_components/velocity/velocity.min"
 require "../bower_components/velocity/velocity.ui.min"
 
+
 class RamonaLisa
 
   setHeights: ->
@@ -11,6 +12,9 @@ class RamonaLisa
   prepareSections: ->
     @setHeights()
     $(window).resize _.debounce @setHeights
+
+    @$sections.velocity 'fadeIn',
+      duration: 500
 
   cacheJQuery: ->
     @$sections = $ '.section'
@@ -22,8 +26,8 @@ class RamonaLisa
     @$navItems.click (e) ->
       e.preventDefault()
       id = $(e.currentTarget).attr('href')
-      console.log id
-      $(id).velocity 'scroll'
+      $(id).velocity 'scroll',
+        complete: -> location.hash = id
 
     @$navToggle.click @toggleNav.bind(@)
 

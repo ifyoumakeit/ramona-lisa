@@ -5,18 +5,12 @@
 .video {
   @extend %grid__item;
   @extend %xl--one-third;
-
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 
 .video__title {
-  display: inline-block;
   font-weight: bold;
-  border: 1px $color-primary solid;
-  padding: 5px;
-  letter-spacing: 1px;
-  line-height: 1;
 }
 
 .video__descr {
