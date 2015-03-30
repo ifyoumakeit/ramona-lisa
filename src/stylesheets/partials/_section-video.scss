@@ -5,18 +5,42 @@
 .video {
   @extend %grid__item;
   @extend %xl--one-third;
+
+  margin-bottom: 5px;
 }
 
 
 .video__title {
-  margin-bottom: 5px;
+  display: inline-block;
+  font-weight: bold;
+  border: 1px $color-primary solid;
+  padding: 5px;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.video__descr {
+  font-size: $fontSize-small;
+  font-weight: bold;
 }
 
 .video__box {
-  background: black;
+  border: 1px $color-primary solid;
   position: relative;
   height: 0;
   width: 100%;
-  padding-bottom: 50%;
+  padding-bottom: 56.25%;
   margin-bottom: 5px;
+
+  img {
+    background: black;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    border: 0;
+  }
 }

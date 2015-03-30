@@ -25,14 +25,23 @@ $breakpoint-has-pull:   ('s', 'm', 'l', 'xl')!default;
 =            COLORS            =
 ==============================*/
 
-$color-primary: #ff0000;
-$color-secondary: #00ff00;
-$color-bg: #efefef;
-$color-border: #ddd;
+$color-primary: #11546e;
+$color-text: $color-primary;
+$color-secondary: #b88c88;
+$color-bg: #d2ddd6;
+$color-border: #ffffff;
+$color-bg-invert: #050608;
+$color-primary-invert: #fff;
+
+$color-overlay: rgba(#fff, 0.025);
 
 /*=============================
 =            SIZES            =
 =============================*/
 
 $border-width: 5px;
-$blur-width: 10px;
+$blur-width: 5px;
+$sidebar-width: 150px;
+
+$fontSize-small: 1rem;
+$fontSize-large: 4rem;

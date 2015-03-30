@@ -1,3 +1,4 @@
+
 .albums {
   @extend %grid;
 }
@@ -10,37 +11,36 @@
 }
 
 .album__artwork {
-  position: relative;
   width: 100%;
-  height: 0;
-  padding-bottom: 100%;
-  background: black;
-  border-radius: 5px;
 }
 
 .album__name {
+  display: inline-block;
   font-weight: bold;
+  border: 1px $color-secondary solid;
+  padding: 5px;
+  letter-spacing: 1px;
+  line-height: 1;
 }
 
 .album__links {
-  margin: 0;
-  padding: 0;
+  margin: 0 0 0 5px;
+  padding: 5px 0 0 0;
   list-style: none;
+  text-align: left;
+  border-left: 1px $color-secondary solid;
+  display: block;
 }
 
 .album__link {
-  background: #efefef;
   padding: 5px;
-  border-top: 1px rgba(255,255,255,0.75) solid;
-  border-bottom: 1px rgba(0,0,0,0.1) solid;
-
+  border: 1px $color-secondary solid;
+  border-left: 0;
   font-size: 1rem;
+  margin-top: 2px;
 
-  &:first-child {
-    border-top: 0;
+  @include grid-media-query('xl'){
+    display: inline-block;
   }
 
-  &:last-child {
-    border-bottom: 0;
-  }
 }

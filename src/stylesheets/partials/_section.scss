@@ -2,10 +2,9 @@
   width: 100%;
   text-align: center;
   position: relative;
-
-  &:nth-child(odd){
-    background: $color-bg;
-  }
+  overflow: hidden;
+  min-height: 0;
+  transition: min-height 0.5s;
 
   &:after {
     content: '';
@@ -49,17 +48,39 @@
   margin: 20px auto 0;
 }
 
+
 .section__title {
-  font-size: 4rem;
+  position: relative;
+  text-transform: uppercase;
+  border-left: 1px $color-primary solid;
+  border-bottom: 1px $color-primary solid;
+  font-size: $fontSize-small;
+  letter-spacing: 1px;
   line-height: 1;
   font-weight: bold;
-  color: rgba($color-primary,0.5);
-  transform: rotate(-3deg);
-
+  color: $color-primary;
   word-break: break-all;
+  margin-bottom: 2rem;
+  padding: 0 0 5px 5px;
 
-  @include grid-media-query('xl'){
-    font-size: 8rem;
+  &:before {
+    position: relative;
+    display: inline-block;
+    border-right: 1px $color-primary solid;
+    padding-right: 5px;
+    margin-right: 5px;
+    margin-top: 1px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 3px;
+    width: 100%;
+    background-image: linear-gradient(90deg, transparent 90%, $color-primary 10%);
+    background-size: 10px 10px;
   }
 }
 
@@ -67,16 +88,41 @@
   padding-top: 1rem;
 }
 
+.section--invert {
+  background: $color-bg-invert;
+  color: $color-secondary;
+
+  .section__title {
+    color: $color-secondary;
+    border-color: $color-secondary;
+    &:before {
+      border-color: $color-secondary;
+    }
+
+    &:after {
+      background-image: linear-gradient(90deg, transparent 90%, $color-secondary 10%);
+    }
+  }
+}
+
 
 /*==============================
 =            CUSTOM            =
 ==============================*/
 
-/*
-.section--home:after {
-  background-image: url(//placekitten.com/g/1200/600);
-}
+.section:nth-child(1) .section__title:before { content: 'I'; }
+.section:nth-child(2) .section__title:before { content: 'II'; }
+.section:nth-child(3) .section__title:before { content: 'III'; }
+.section:nth-child(4) .section__title:before { content: 'IV'; }
+.section:nth-child(5) .section__title:before { content: 'V'; }
+.section:nth-child(6) .section__title:before { content: 'VI'; }
+.section:nth-child(7) .section__title:before { content: 'VII'; }
 
+
+.section--home:after {
+  background-image: url(../images/face--down.jpg);
+}
+/*
 .section--music:after {
   background-image: url(//placekitten.com/g/1200/700);
 }

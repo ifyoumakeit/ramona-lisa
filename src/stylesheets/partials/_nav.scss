@@ -1,24 +1,33 @@
 .navigation {
-
+  width: 150px;
   font-size: 1.6rem;
   line-height: 1.5;
-  border-top: 5px $color-primary solid;
+  overflow: hidden;
+  position: fixed;
+  z-index: 10;
+  left: -100%;
+  top: 0;
+  bottom: 0;
+  border-left: 1px $color-primary solid;
+  padding-top: 10px;
 
   @include grid-media-query('xl'){
 
-    position: fixed;
-    z-index: 10;
-    left: 0;
-    top: 15px;
+    left: $border-width;
 
     font-size: 1.2rem;
     line-height: 1;
 
-    border-top: 0;
-    border-left: 5px $color-primary solid;
+  }
+}
 
-    background: $color-primary;
+.navigation__header {
+  width: 90%;
+  margin-bottom: 10px;
+  display: none;
 
+  @include grid-media-query('xl'){
+    display: block;
   }
 }
 
@@ -29,31 +38,73 @@
 
 .navigation__item {
   list-style: none;
-  background: $color-bg;
-  padding: 5px;
-  border-top: 1px rgba(255,255,255,0.75) solid;
-  border-bottom: 1px rgba(0,0,0,0.1) solid;
-
-  @include grid-media-query('xl'){
-    background: rgba(0,0,0,0.4);
-    border: 0;
-    color: white;
-
-    &:hover {
-      background: rgba(0,0,0,0.6);
-    }
-
-  }
 }
 
 .navigation__link {
-  display: block;
-  color: white;
+  background-color: $color-bg;
+  padding: 5px;
+  margin: 2px 2px 2px 0;
+  display: inline-block;
+  color: $color-primary;
   text-decoration: none;
-  width: 100%;
-  text-shadow: 0 0 1px black;
+  position: relative;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: $fontSize-small;
+
+  border: 1px $color-primary solid;
+  border-left-width: 0;
+
+  transform: skewY(-5deg);
+
+  &:after {
+    z-index: -1;
+    font-weight: bold;
+    content: "\203A";
+    position: absolute;
+    right: 1px;
+    top: -1px;
+    border: 1px $color-primary solid;
+    border-left-width: 0;
+    padding: 5px;
+    color: $color-bg;
+    transition: right 0.5s;
+  }
 
   &:hover {
-    color: $color-primary;
+    background: rgba(0,0,0,0.05);
+
+    &:after {
+      color: $color-primary;
+      right: -15px;
+    }
+  }
+}
+
+.navigation__toggle {
+  cursor: pointer;
+  z-index: 99;
+  position: fixed;
+  padding-left: 1.25em;
+  top: 5px;
+  right: 5px;
+  width: 1em;
+  height: 1em;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.25em;
+    width: 1em;
+    height: 0.15em;
+    background: white;
+    box-shadow:
+      0 0.25em 0 0 white,
+      0 0.5em 0 0 white;
+  }
+
+  @include grid-media-query('xl'){
+    display: none;
   }
 }

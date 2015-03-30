@@ -5,8 +5,17 @@
 .photo {
   @extend %grid__item;
   @extend %xl--one-third;
+
+  margin-bottom: 5px;
 }
 
 .photo__image {
+  border: 1px $color-primary solid;
+  padding: 5px;
   max-width: 100%;
+}
+
+.photo__title {
+  font-size: $fontSize-small;
+  margin-bottom: 10px;
 }
