@@ -25,7 +25,8 @@ class RamonaLisa
       e.preventDefault()
       id = $(e.currentTarget).attr('href')
       $(id).velocity 'scroll',
-        complete: -> location.hash = id
+        duration: 500,
+        easing: 'ease-in-out'
 
     $navToggle.click ->
       x = if $nav.css('left') is '5px' then '-100%' else '5px'
