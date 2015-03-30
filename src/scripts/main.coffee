@@ -16,32 +16,42 @@ class RamonaLisa
     @$sections.velocity 'fadeIn',
       duration: 500
 
-  cacheJQuery: ->
-    @$sections = $ '.section'
-    @$nav = $ '.navigation'
-    @$navItems = @$nav.find '.navigation__link'
-    @$navToggle = $ '.navigation__toggle'
-
   setupNavigation: ->
-    @$navItems.click (e) ->
+    $nav = $ '.navigation'
+    $navItems = $nav.find '.navigation__link'
+    $navToggle = $ '.navigation__toggle'
+
+    $navItems.click (e) ->
       e.preventDefault()
       id = $(e.currentTarget).attr('href')
       $(id).velocity 'scroll',
         complete: -> location.hash = id
 
-    @$navToggle.click @toggleNav.bind(@)
+    $navToggle.click ->
+      x = if $nav.css('left') is '5px' then '-100%' else '5px'
+      $nav.velocity 'left': x
 
-  toggleNav: (e) ->
-    if @$nav.css('left') is '5px'
-      @$nav.velocity 'left': '-100%'
-    else
-      @$nav.velocity 'left': '5px'
+  setupVideo: ->
+    $videoBox = $ '.video__viewer:not(.video__viewer--main)'
+    $videoViewer = $ '.video__viewer--main'
+    $videoView = $videoViewer.find('.video__view')
+
+    $videoBox.click (e) ->
+      id = $(e.currentTarget).attr('data-video')
+      console.log $(e.currentTarget).attr('data-video')
+      console.log $(e.currentTarget)
+      $videoViewer.velocity
+        paddingBottom: '56.25%'
+        complete: ->
+          $videoView.attr 'src', "https://www.youtube.com/embed/#{id}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0"
+
+
 
   init: ->
-
-    @cacheJQuery()
+    @$sections = $ '.section'
     @prepareSections()
     @setupNavigation()
+    @setupVideo()
 
 
 $ -> (new RamonaLisa).init()

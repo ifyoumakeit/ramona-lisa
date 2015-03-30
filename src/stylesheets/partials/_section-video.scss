@@ -18,23 +18,28 @@
   font-weight: bold;
 }
 
-.video__box {
+.video__viewer {
+  cursor: pointer;
   border: 1px $color-primary solid;
   position: relative;
   height: 0;
   width: 100%;
   padding-bottom: 56.25%;
   margin-bottom: 5px;
+}
+.video__view {
+  background: black;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  border: 0;
+}
 
-  img {
-    background: black;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
-    border: 0;
-  }
+.video__viewer--main {
+  padding-bottom: 0;
+  border: 0;
 }
