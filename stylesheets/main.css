@@ -770,7 +770,7 @@ a {
 }
 
 /* line 26, ../../src/stylesheets/partials/_section-music.scss */
-.album__links {
+.album__notes {
   margin: 0 0 0 5px;
   padding: 5px 0 0 0;
   list-style: none;
@@ -786,6 +786,7 @@ a {
   border-left: 0;
   font-size: 1rem;
   margin-top: 2px;
+  text-decoration: none;
 }
 @media only screen and (min-width: 1024px) {
   /* line 35, ../../src/stylesheets/partials/_section-music.scss */
@@ -811,7 +812,8 @@ a {
 }
 
 /* line 21, ../../src/stylesheets/partials/_section-video.scss */
-.video__box {
+.video__viewer {
+  cursor: pointer;
   border: 1px #11546e solid;
   position: relative;
   height: 0;
@@ -819,8 +821,9 @@ a {
   padding-bottom: 56.25%;
   margin-bottom: 5px;
 }
-/* line 29, ../../src/stylesheets/partials/_section-video.scss */
-.video__box img {
+
+/* line 30, ../../src/stylesheets/partials/_section-video.scss */
+.video__view {
   background: black;
   position: absolute;
   top: 5px;
@@ -829,6 +832,12 @@ a {
   bottom: 5px;
   width: calc(100% - 10px);
   height: calc(100% - 10px);
+  border: 0;
+}
+
+/* line 42, ../../src/stylesheets/partials/_section-video.scss */
+.video__viewer--main {
+  padding-bottom: 0;
   border: 0;
 }
 
