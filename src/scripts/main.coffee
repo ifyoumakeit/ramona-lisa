@@ -48,11 +48,12 @@ class RamonaLisa
       id = $(e.currentTarget).attr('data-video')
       $videoViewer.velocity
         paddingBottom: '56.25%'
-        duration: 750,
+        duration: 500,
         easing: 'ease-in-out'
         complete: ->
           $videoView.attr 'src', "https://www.youtube.com/embed/#{id}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0"
           $videoViewer.velocity 'scroll'
+            easing: 'ease-in-out'
 
   setupPhoto: ->
     $photo = $ '.photo'
@@ -64,11 +65,12 @@ class RamonaLisa
       $photoViewer
         .velocity
           paddingBottom: '56.25%'
-          duration: 750,
+          duration: 500,
           easing: 'ease-in-out'
           complete: ->
             $photoView.attr 'src', img_url
             $photoViewer.velocity 'scroll'
+              easing: 'ease-in-out'
 
   setupLazyLoad: ->
     $('[data-src]').unveil()

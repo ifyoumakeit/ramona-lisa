@@ -19,17 +19,6 @@
   }
 }
 
-.navigation__header {
-  width: 150px;
-  max-width: 90%;
-  margin-bottom: 10px;
-  display: none;
-
-  @include grid-media-query('xl'){
-    display: block;
-  }
-}
-
 .navigation__items {
   padding: 0;
   margin: 0;

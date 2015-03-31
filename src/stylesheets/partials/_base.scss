@@ -9,7 +9,7 @@ html {
 body {
   margin: 0;
   background: $color-bg;
-  padding: 5px;
+  padding: 0 5px;
   color: $color-text;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.6rem;
@@ -17,9 +17,6 @@ body {
 
   position: relative;
 
-  @include grid-media-query('xl'){
-    padding: 0 0 0 $sidebar-width;
-  }
 }
 
 a {
