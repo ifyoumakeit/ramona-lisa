@@ -118,6 +118,7 @@
   border: 1px $color-primary solid;
 
   &:hover {
+    background: white;
     border-color: darken($color-primary,50%);
   }
 
@@ -125,6 +126,7 @@
     border-color: $color-secondary;
 
     &:hover {
+      background: black;
       border-color: lighten($color-primary,50%);
     }
   }
