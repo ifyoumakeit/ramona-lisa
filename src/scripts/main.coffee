@@ -52,7 +52,7 @@ class RamonaLisa
         easing: 'ease-in-out'
         complete: ->
           $videoView.attr 'src', "https://www.youtube.com/embed/#{id}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0"
-          $videoViewer.velocity 'scroll'
+          $videoViewer.velocity 'scroll',
             easing: 'ease-in-out'
 
   setupPhoto: ->
@@ -69,11 +69,12 @@ class RamonaLisa
           easing: 'ease-in-out'
           complete: ->
             $photoView.attr 'src', img_url
-            $photoViewer.velocity 'scroll'
+            $photoViewer.velocity 'scroll',
               easing: 'ease-in-out'
 
   setupLazyLoad: ->
-    $('[data-src]').unveil()
+    console.log 'setupLazyLoad'
+    $('img').unveil()
 
   cacheJQuery: ->
     @$nav       = $ '.navigation'
@@ -84,6 +85,7 @@ class RamonaLisa
   init: ->
     @cacheJQuery()
     @prepareSections()
+    @setupLazyLoad()
     @setupNavigation()
     @setupVideo()
     @setupPhoto()
