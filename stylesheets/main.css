@@ -419,6 +419,11 @@ a {
   color: #b88c88;
 }
 
+/* line 29, ../../src/stylesheets/partials/_base.scss */
+img {
+  max-width: 100%;
+}
+
 /* line 1, ../../src/stylesheets/partials/_nav.scss */
 .navigation {
   font-size: 1.6rem;
@@ -435,13 +440,13 @@ a {
 @media only screen and (min-width: 1024px) {
   /* line 1, ../../src/stylesheets/partials/_nav.scss */
   .navigation {
-    left: 5px;
+    left: 5px !important;
     font-size: 1.2rem;
     line-height: 1;
   }
 }
 
-/* line 23, ../../src/stylesheets/partials/_nav.scss */
+/* line 22, ../../src/stylesheets/partials/_nav.scss */
 .navigation__header {
   width: 150px;
   max-width: 90%;
@@ -449,24 +454,24 @@ a {
   display: none;
 }
 @media only screen and (min-width: 1024px) {
-  /* line 23, ../../src/stylesheets/partials/_nav.scss */
+  /* line 22, ../../src/stylesheets/partials/_nav.scss */
   .navigation__header {
     display: block;
   }
 }
 
-/* line 34, ../../src/stylesheets/partials/_nav.scss */
+/* line 33, ../../src/stylesheets/partials/_nav.scss */
 .navigation__items {
   padding: 0;
   margin: 0;
 }
 
-/* line 39, ../../src/stylesheets/partials/_nav.scss */
+/* line 38, ../../src/stylesheets/partials/_nav.scss */
 .navigation__item {
   list-style: none;
 }
 
-/* line 43, ../../src/stylesheets/partials/_nav.scss */
+/* line 42, ../../src/stylesheets/partials/_nav.scss */
 .navigation__link {
   background-color: #d2ddd6;
   padding: 5px;
@@ -483,7 +488,7 @@ a {
   -webkit-transform: skewY(-5deg);
   transform: skewY(-5deg);
 }
-/* line 60, ../../src/stylesheets/partials/_nav.scss */
+/* line 59, ../../src/stylesheets/partials/_nav.scss */
 .navigation__link:after {
   background: #d2ddd6;
   z-index: -1;
@@ -498,13 +503,13 @@ a {
   color: #d2ddd6;
   transition: right 0.5s;
 }
-/* line 77, ../../src/stylesheets/partials/_nav.scss */
+/* line 76, ../../src/stylesheets/partials/_nav.scss */
 .navigation__link:hover:after {
   color: #11546e;
   right: -15px;
 }
 
-/* line 84, ../../src/stylesheets/partials/_nav.scss */
+/* line 83, ../../src/stylesheets/partials/_nav.scss */
 .navigation__toggle {
   cursor: pointer;
   z-index: 99;
@@ -515,7 +520,7 @@ a {
   width: 1em;
   height: 1em;
 }
-/* line 94, ../../src/stylesheets/partials/_nav.scss */
+/* line 93, ../../src/stylesheets/partials/_nav.scss */
 .navigation__toggle:before {
   content: "";
   position: absolute;
@@ -526,7 +531,7 @@ a {
   background: white;
   box-shadow: 0 0.25em 0 0 white, 0 0.5em 0 0 white;
 }
-/* line 107, ../../src/stylesheets/partials/_nav.scss */
+/* line 106, ../../src/stylesheets/partials/_nav.scss */
 .navigation__toggle:after {
   content: "";
   position: absolute;
@@ -539,7 +544,7 @@ a {
   border-radius: 50%;
 }
 @media only screen and (min-width: 1024px) {
-  /* line 84, ../../src/stylesheets/partials/_nav.scss */
+  /* line 83, ../../src/stylesheets/partials/_nav.scss */
   .navigation__toggle {
     display: none;
   }
@@ -868,45 +873,44 @@ a {
 /* line 5, ../../src/stylesheets/partials/_section-video.scss */
 .video {
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
-/* line 12, ../../src/stylesheets/partials/_section-video.scss */
+/* line 13, ../../src/stylesheets/partials/_section-video.scss */
 .video__title {
   font-weight: bold;
 }
 
-/* line 16, ../../src/stylesheets/partials/_section-video.scss */
+/* line 17, ../../src/stylesheets/partials/_section-video.scss */
 .video__descr {
   font-size: 1rem;
   font-weight: bold;
 }
 
-/* line 21, ../../src/stylesheets/partials/_section-video.scss */
+/* line 22, ../../src/stylesheets/partials/_section-video.scss */
 .video__viewer {
-  cursor: pointer;
   position: relative;
   height: 0;
   width: 100%;
-  padding-bottom: 56.25%;
+  padding-bottom: 0;
   margin-bottom: 5px;
 }
 
-/* line 29, ../../src/stylesheets/partials/_section-video.scss */
+/* line 30, ../../src/stylesheets/partials/_section-video.scss */
+.video__image {
+  padding: 5px;
+}
+
+/* line 34, ../../src/stylesheets/partials/_section-video.scss */
 .video__view {
   background: black;
   position: absolute;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
   width: calc(100% - 10px);
   height: calc(100% - 10px);
-  border: 0;
-}
-
-/* line 41, ../../src/stylesheets/partials/_section-video.scss */
-.video__viewer--main {
-  padding-bottom: 0;
   border: 0;
 }
 
