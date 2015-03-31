@@ -740,12 +740,12 @@ img {
   background-image: url(//placekitten.com/g/1200/1200);
 }
 */
-/* line 1, ../../src/stylesheets/partials/_section-home.scss */
+/* line 3, ../../src/stylesheets/partials/_section-home.scss */
 .section--home .section__container {
   text-align: center;
 }
 
-/* line 5, ../../src/stylesheets/partials/_section-home.scss */
+/* line 8, ../../src/stylesheets/partials/_section-home.scss */
 .home__title {
   font-size: 3rem;
   color: white;
@@ -756,13 +756,13 @@ img {
   letter-spacing: 1px;
 }
 @media only screen and (min-width: 1024px) {
-  /* line 5, ../../src/stylesheets/partials/_section-home.scss */
+  /* line 8, ../../src/stylesheets/partials/_section-home.scss */
   .home__title {
     font-size: 6rem;
   }
 }
 
-/* line 19, ../../src/stylesheets/partials/_section-home.scss */
+/* line 22, ../../src/stylesheets/partials/_section-home.scss */
 .home__bricks {
   background: linear-gradient(135deg, transparent 22px, rgba(255, 255, 255, 0.025) 22px, rgba(255, 255, 255, 0.025) 24px, transparent 24px, transparent 67px, rgba(255, 255, 255, 0.025) 67px, rgba(255, 255, 255, 0.025) 69px, transparent 69px), linear-gradient(225deg, transparent 22px, rgba(255, 255, 255, 0.025) 22px, rgba(255, 255, 255, 0.025) 24px, transparent 24px, transparent 67px, rgba(255, 255, 255, 0.025) 67px, rgba(255, 255, 255, 0.025) 69px, transparent 69px) 0 64px;
   background-size: 64px 128px;

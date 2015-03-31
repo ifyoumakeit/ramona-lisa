@@ -27,7 +27,7 @@ class RamonaLisa
       e.preventDefault()
       id = $(e.currentTarget).attr('href')
       $(id).velocity 'scroll',
-        duration: 750,
+        duration: 500,
         easing: 'ease-in-out'
         complete: @toggleNav.bind(@)
 
