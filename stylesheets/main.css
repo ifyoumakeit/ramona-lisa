@@ -705,56 +705,58 @@ img {
 }
 /* line 120, ../../src/stylesheets/partials/_section.scss */
 .-boxed:hover {
+  background: white;
   border-color: black;
 }
-/* line 124, ../../src/stylesheets/partials/_section.scss */
+/* line 125, ../../src/stylesheets/partials/_section.scss */
 .section--invert .-boxed {
   border-color: #b88c88;
 }
-/* line 127, ../../src/stylesheets/partials/_section.scss */
+/* line 128, ../../src/stylesheets/partials/_section.scss */
 .section--invert .-boxed:hover {
+  background: black;
   border-color: #90d4ee;
 }
 
 /*==============================
 =            CUSTOM            =
 ==============================*/
-/* line 137, ../../src/stylesheets/partials/_section.scss */
+/* line 139, ../../src/stylesheets/partials/_section.scss */
 .section:nth-child(1) .section__title:before {
   content: 'I';
 }
 
-/* line 138, ../../src/stylesheets/partials/_section.scss */
+/* line 140, ../../src/stylesheets/partials/_section.scss */
 .section:nth-child(2) .section__title:before {
   content: 'II';
 }
 
-/* line 139, ../../src/stylesheets/partials/_section.scss */
+/* line 141, ../../src/stylesheets/partials/_section.scss */
 .section:nth-child(3) .section__title:before {
   content: 'III';
 }
 
-/* line 140, ../../src/stylesheets/partials/_section.scss */
+/* line 142, ../../src/stylesheets/partials/_section.scss */
 .section:nth-child(4) .section__title:before {
   content: 'IV';
 }
 
-/* line 141, ../../src/stylesheets/partials/_section.scss */
+/* line 143, ../../src/stylesheets/partials/_section.scss */
 .section:nth-child(5) .section__title:before {
   content: 'V';
 }
 
-/* line 142, ../../src/stylesheets/partials/_section.scss */
+/* line 144, ../../src/stylesheets/partials/_section.scss */
 .section:nth-child(6) .section__title:before {
   content: 'VI';
 }
 
-/* line 143, ../../src/stylesheets/partials/_section.scss */
+/* line 145, ../../src/stylesheets/partials/_section.scss */
 .section:nth-child(7) .section__title:before {
   content: 'VII';
 }
 
-/* line 146, ../../src/stylesheets/partials/_section.scss */
+/* line 148, ../../src/stylesheets/partials/_section.scss */
 .section--home:after {
   background-image: url(../images/face--down.jpg);
 }
@@ -981,9 +983,10 @@ img {
 .about__body {
   background: white;
   padding: 5% 10%;
+  box-shadow: 0 12px 0px -10px #11546e;
 }
 
-/* line 6, ../../src/stylesheets/partials/_section-about.scss */
+/* line 7, ../../src/stylesheets/partials/_section-about.scss */
 .about__caps {
   font-family: Georgia;
   display: inline-block;
