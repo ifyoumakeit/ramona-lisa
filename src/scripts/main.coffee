@@ -1,7 +1,8 @@
 window.jQuery = window.$ = require "../bower_components/jquery/jquery.min"
 _ = require "../bower_components/underscore/underscore-min"
+
 require "../bower_components/velocity/velocity.min"
-require "../bower_components/velocity/velocity.ui.min"
+require "../bower_components/unveil/jquery.unveil.min"
 
 
 class RamonaLisa
@@ -12,7 +13,7 @@ class RamonaLisa
 
   prepareSections: ->
     @setHeights()
-    $(window).resize _.debounce @setHeights.bind(@)
+    $(window).resize _.debounce @setHeights.bind(@), 500
 
     @$sections.velocity 'fadeIn',
       duration: 500
@@ -39,11 +40,11 @@ class RamonaLisa
       duration: 750
 
   setupVideo: ->
-    $videoBox = $ '.video__viewer:not(.video__viewer--main)'
-    $videoViewer = $ '.video__viewer--main'
+    $video = $ '.video'
+    $videoViewer = $ '.video__viewer'
     $videoView = $videoViewer.find('.video__view')
 
-    $videoBox.click (e) ->
+    $video.click (e) ->
       id = $(e.currentTarget).attr('data-video')
       $videoViewer.velocity
         paddingBottom: '56.25%'
@@ -69,6 +70,8 @@ class RamonaLisa
             $photoView.attr 'src', img_url
             $photoViewer.velocity 'scroll'
 
+  setupLazyLoad: ->
+    $('[data-src]').unveil()
 
   cacheJQuery: ->
     @$nav       = $ '.navigation'

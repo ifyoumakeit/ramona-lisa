@@ -12,8 +12,7 @@
 
   @include grid-media-query('xl'){
 
-    left: $border-width;
-
+    left: $border-width !important;
     font-size: 1.2rem;
     line-height: 1;
 

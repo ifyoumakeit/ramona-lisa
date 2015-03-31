@@ -6,6 +6,7 @@
   @extend %grid__item;
   @extend %xl--one-third;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 
@@ -19,26 +20,25 @@
 }
 
 .video__viewer {
-  cursor: pointer;
   position: relative;
   height: 0;
   width: 100%;
-  padding-bottom: 56.25%;
+  padding-bottom: 0;
   margin-bottom: 5px;
 }
+
+.video__image {
+  padding: 5px;
+}
+
 .video__view {
   background: black;
   position: absolute;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
   width: calc(100% - 10px);
   height: calc(100% - 10px);
-  border: 0;
-}
-
-.video__viewer--main {
-  padding-bottom: 0;
   border: 0;
 }
