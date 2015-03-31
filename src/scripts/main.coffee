@@ -7,30 +7,36 @@ require "../bower_components/velocity/velocity.ui.min"
 class RamonaLisa
 
   setHeights: ->
+    @isMobile = @$navToggle.is ':visible'
     @$sections.css 'min-height', $(window).height()
 
   prepareSections: ->
     @setHeights()
-    $(window).resize _.debounce @setHeights
+    $(window).resize _.debounce @setHeights.bind(@)
 
     @$sections.velocity 'fadeIn',
       duration: 500
 
   setupNavigation: ->
-    $nav = $ '.navigation'
-    $navItems = $nav.find '.navigation__link'
-    $navToggle = $ '.navigation__toggle'
 
-    $navItems.click (e) ->
+    @$navItems.click   @handleNavClick.bind(@)
+    @$navToggle.click  @toggleNav.bind(@)
+
+  handleNavClick: (e) ->
       e.preventDefault()
       id = $(e.currentTarget).attr('href')
       $(id).velocity 'scroll',
-        duration: 500,
+        duration: 750,
         easing: 'ease-in-out'
+        complete: @toggleNav.bind(@)
 
-    $navToggle.click ->
-      x = if $nav.css('left') is '5px' then '-100%' else '5px'
-      $nav.velocity 'left': x
+  toggleNav: ->
+    x = if @$nav.css('left') is '5px' then '-100%' else '5px'
+    x = if @isMobile then x else '5px'
+    @$nav.velocity
+      left: x
+      easing: 'ease-in-out'
+      duration: 750
 
   setupVideo: ->
     $videoBox = $ '.video__viewer:not(.video__viewer--main)'
@@ -39,20 +45,42 @@ class RamonaLisa
 
     $videoBox.click (e) ->
       id = $(e.currentTarget).attr('data-video')
-      console.log $(e.currentTarget).attr('data-video')
-      console.log $(e.currentTarget)
       $videoViewer.velocity
         paddingBottom: '56.25%'
+        duration: 750,
+        easing: 'ease-in-out'
         complete: ->
           $videoView.attr 'src', "https://www.youtube.com/embed/#{id}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0"
+          $videoViewer.velocity 'scroll'
+
+  setupPhoto: ->
+    $photo = $ '.photo'
+    $photoViewer = $ '.photo__viewer'
+    $photoView = $photoViewer.find('.photo__view')
+
+    $photo.click (e) ->
+      img_url = $(e.currentTarget).find('img').attr 'src'
+      $photoViewer
+        .velocity
+          paddingBottom: '56.25%'
+          duration: 750,
+          easing: 'ease-in-out'
+          complete: ->
+            $photoView.attr 'src', img_url
+            $photoViewer.velocity 'scroll'
 
 
+  cacheJQuery: ->
+    @$nav       = $ '.navigation'
+    @$navToggle = $ '.navigation__toggle'
+    @$navItems  = @$nav.find '.navigation__link'
+    @$sections  = $ '.section'
 
   init: ->
-    @$sections = $ '.section'
+    @cacheJQuery()
     @prepareSections()
     @setupNavigation()
     @setupVideo()
-
+    @setupPhoto()
 
 $ -> (new RamonaLisa).init()

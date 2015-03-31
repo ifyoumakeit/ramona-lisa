@@ -1,5 +1,4 @@
 .navigation {
-  width: 150px;
   font-size: 1.6rem;
   line-height: 1.5;
   overflow: hidden;
@@ -22,7 +21,8 @@
 }
 
 .navigation__header {
-  width: 90%;
+  width: 150px;
+  max-width: 90%;
   margin-bottom: 10px;
   display: none;
 
@@ -58,11 +58,12 @@
   transform: skewY(-5deg);
 
   &:after {
+    background: $color-bg;
     z-index: -1;
     font-weight: bold;
     content: "\203A";
     position: absolute;
-    right: 1px;
+    right: -1px;
     top: -1px;
     border: 1px $color-primary solid;
     border-left-width: 0;
@@ -72,7 +73,6 @@
   }
 
   &:hover {
-    background: rgba(0,0,0,0.05);
 
     &:after {
       color: $color-primary;
@@ -86,8 +86,8 @@
   z-index: 99;
   position: fixed;
   padding-left: 1.25em;
-  top: 5px;
-  right: 5px;
+  top: 0px;
+  right: 0px;
   width: 1em;
   height: 1em;
 
@@ -102,6 +102,18 @@
     box-shadow:
       0 0.25em 0 0 white,
       0 0.5em 0 0 white;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: -2em;
+    right: -2em;
+    width: 4em;
+    height: 4em;
+    background: $color-bg-invert;
+    z-index: -1;
+    border-radius: 50%;
   }
 
   @include grid-media-query('xl'){

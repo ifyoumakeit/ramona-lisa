@@ -22,10 +22,8 @@
 
     filter: blur($blur-width);
   }
-}
 
-@include grid-media-query('xl'){
-  .section:before {
+  &:before {
     content: "";
     display: inline-block;
     vertical-align: middle;
@@ -35,20 +33,25 @@
     max-height: inherit;
     padding: 0;
   }
-
-  .section__container {
-    display: inline-block;
-    vertical-align: middle;
-  }
 }
 
 .section__container {
+  display: inline-block;
+  vertical-align: top;
   text-align: left;
   width: 90%;
   max-width: 960px;
   margin: 20px auto 0;
+
+  @include grid-media-query('xl'){
+    vertical-align: middle;
+  }
 }
 
+
+.section--home .section__container {
+  vertical-align: middle;
+}
 
 .section__title {
   position: relative;
@@ -106,6 +109,26 @@
   }
 }
 
+
+/*=============================
+=            BOXES            =
+=============================*/
+
+.-boxed {
+  border: 1px $color-primary solid;
+
+  &:hover {
+    border-color: darken($color-primary,50%);
+  }
+
+  .section--invert & {
+    border-color: $color-secondary;
+
+    &:hover {
+      border-color: lighten($color-primary,50%);
+    }
+  }
+}
 
 /*==============================
 =            CUSTOM            =

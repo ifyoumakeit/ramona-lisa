@@ -3,13 +3,17 @@
 }
 
 .home__title {
-  font-size: 6rem;
+  font-size: 3rem;
   color: white;
   border: 1px white solid;
   display: inline-block;
   padding: 2px 5px;
   line-height: 1;
   letter-spacing: 1px;
+
+  @include grid-media-query('xl'){
+    font-size: 6rem;
+  }
 }
 
 .home__bricks {
@@ -22,5 +26,5 @@
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: 11;
+    z-index: 2;
 }
