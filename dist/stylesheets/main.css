@@ -586,9 +586,8 @@ img {
   overflow: hidden;
   min-height: 0;
   transition: min-height 0.5s;
-  opacity: 0;
 }
-/* line 10, ../../src/stylesheets/partials/_section.scss */
+/* line 9, ../../src/stylesheets/partials/_section.scss */
 .section:after {
   content: '';
   z-index: -1;
@@ -603,7 +602,7 @@ img {
   -webkit-filter: blur(5px);
   filter: blur(5px);
 }
-/* line 26, ../../src/stylesheets/partials/_section.scss */
+/* line 25, ../../src/stylesheets/partials/_section.scss */
 .section:before {
   content: "";
   display: inline-block;
@@ -615,7 +614,7 @@ img {
   padding: 0;
 }
 
-/* line 38, ../../src/stylesheets/partials/_section.scss */
+/* line 37, ../../src/stylesheets/partials/_section.scss */
 .section__container {
   display: inline-block;
   vertical-align: top;
@@ -625,18 +624,18 @@ img {
   margin: 20px auto 0;
 }
 @media only screen and (min-width: 1024px) {
-  /* line 38, ../../src/stylesheets/partials/_section.scss */
+  /* line 37, ../../src/stylesheets/partials/_section.scss */
   .section__container {
     vertical-align: middle;
   }
 }
 
-/* line 52, ../../src/stylesheets/partials/_section.scss */
+/* line 51, ../../src/stylesheets/partials/_section.scss */
 .section--home .section__container {
   vertical-align: middle;
 }
 
-/* line 56, ../../src/stylesheets/partials/_section.scss */
+/* line 55, ../../src/stylesheets/partials/_section.scss */
 .section__title {
   position: relative;
   text-transform: uppercase;
@@ -651,7 +650,7 @@ img {
   margin-bottom: 2rem;
   padding: 0 0 5px 5px;
 }
-/* line 70, ../../src/stylesheets/partials/_section.scss */
+/* line 69, ../../src/stylesheets/partials/_section.scss */
 .section__title:before {
   position: relative;
   display: inline-block;
@@ -660,7 +659,7 @@ img {
   margin-right: 5px;
   margin-top: 1px;
 }
-/* line 79, ../../src/stylesheets/partials/_section.scss */
+/* line 78, ../../src/stylesheets/partials/_section.scss */
 .section__title:after {
   content: '';
   position: absolute;
@@ -672,26 +671,26 @@ img {
   background-size: 10px 10px;
 }
 
-/* line 91, ../../src/stylesheets/partials/_section.scss */
+/* line 90, ../../src/stylesheets/partials/_section.scss */
 .section__body {
   padding-top: 1rem;
 }
 
-/* line 95, ../../src/stylesheets/partials/_section.scss */
+/* line 94, ../../src/stylesheets/partials/_section.scss */
 .section--invert {
   background: #050608;
   color: #b88c88;
 }
-/* line 99, ../../src/stylesheets/partials/_section.scss */
+/* line 98, ../../src/stylesheets/partials/_section.scss */
 .section--invert .section__title {
   color: #b88c88;
   border-color: #b88c88;
 }
-/* line 102, ../../src/stylesheets/partials/_section.scss */
+/* line 101, ../../src/stylesheets/partials/_section.scss */
 .section--invert .section__title:before {
   border-color: #b88c88;
 }
-/* line 106, ../../src/stylesheets/partials/_section.scss */
+/* line 105, ../../src/stylesheets/partials/_section.scss */
 .section--invert .section__title:after {
   background-image: linear-gradient(90deg, transparent 90%, #b88c88 10%);
 }
@@ -699,20 +698,20 @@ img {
 /*=============================
 =            BOXES            =
 =============================*/
-/* line 117, ../../src/stylesheets/partials/_section.scss */
+/* line 116, ../../src/stylesheets/partials/_section.scss */
 .-boxed {
   border: 1px #11546e solid;
 }
-/* line 120, ../../src/stylesheets/partials/_section.scss */
+/* line 119, ../../src/stylesheets/partials/_section.scss */
 .-boxed:hover {
   background: white;
   border-color: black;
 }
-/* line 125, ../../src/stylesheets/partials/_section.scss */
+/* line 124, ../../src/stylesheets/partials/_section.scss */
 .section--invert .-boxed {
   border-color: #b88c88;
 }
-/* line 128, ../../src/stylesheets/partials/_section.scss */
+/* line 127, ../../src/stylesheets/partials/_section.scss */
 .section--invert .-boxed:hover {
   background: black;
   border-color: #90d4ee;
@@ -721,42 +720,42 @@ img {
 /*==============================
 =            CUSTOM            =
 ==============================*/
-/* line 139, ../../src/stylesheets/partials/_section.scss */
+/* line 138, ../../src/stylesheets/partials/_section.scss */
 .section:nth-child(1) .section__title:before {
   content: 'I';
 }
 
-/* line 140, ../../src/stylesheets/partials/_section.scss */
+/* line 139, ../../src/stylesheets/partials/_section.scss */
 .section:nth-child(2) .section__title:before {
   content: 'II';
 }
 
-/* line 141, ../../src/stylesheets/partials/_section.scss */
+/* line 140, ../../src/stylesheets/partials/_section.scss */
 .section:nth-child(3) .section__title:before {
   content: 'III';
 }
 
-/* line 142, ../../src/stylesheets/partials/_section.scss */
+/* line 141, ../../src/stylesheets/partials/_section.scss */
 .section:nth-child(4) .section__title:before {
   content: 'IV';
 }
 
-/* line 143, ../../src/stylesheets/partials/_section.scss */
+/* line 142, ../../src/stylesheets/partials/_section.scss */
 .section:nth-child(5) .section__title:before {
   content: 'V';
 }
 
-/* line 144, ../../src/stylesheets/partials/_section.scss */
+/* line 143, ../../src/stylesheets/partials/_section.scss */
 .section:nth-child(6) .section__title:before {
   content: 'VI';
 }
 
-/* line 145, ../../src/stylesheets/partials/_section.scss */
+/* line 144, ../../src/stylesheets/partials/_section.scss */
 .section:nth-child(7) .section__title:before {
   content: 'VII';
 }
 
-/* line 148, ../../src/stylesheets/partials/_section.scss */
+/* line 147, ../../src/stylesheets/partials/_section.scss */
 .section--home:after {
   background-image: url(../images/face--down.jpg);
 }

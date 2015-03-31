@@ -15,9 +15,6 @@ class RamonaLisa
     @setHeights()
     $(window).resize _.debounce @setHeights.bind(@), 500
 
-    @$sections.velocity 'fadeIn',
-      duration: 500
-
   setupNavigation: ->
 
     @$navItems.click   @handleNavClick.bind(@)
