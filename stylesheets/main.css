@@ -993,6 +993,13 @@ img {
   font-weight: bold;
 }
 
+/* line 22, ../../src/stylesheets/partials/_section-video.scss */
+.video__image {
+  padding: 5px;
+  max-width: 100%;
+  height: auto;
+}
+
 /* line 5, ../../src/stylesheets/partials/_section-photo.scss */
 .photo {
   margin-bottom: 5px;
@@ -1003,9 +1010,10 @@ img {
 .photo__image {
   padding: 5px;
   max-width: 100%;
+  height: auto;
 }
 
-/* line 18, ../../src/stylesheets/partials/_section-photo.scss */
+/* line 19, ../../src/stylesheets/partials/_section-photo.scss */
 .photo__title {
   font-size: 1rem;
   margin-bottom: 10px;
