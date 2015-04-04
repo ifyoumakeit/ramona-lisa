@@ -1,3 +1,15 @@
+body.overlay {
+
+  .overlay__click {
+    filter: blur(5px);
+  }
+
+  .overlay__background {
+    display: block;
+    opacity: 1;
+  }
+}
+
 
 .overlay__background {
   position: fixed;
@@ -5,13 +17,12 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(255, 255, 255, 0.9);
   z-index: 99;
   display: none;
 
-  &.on {
-    display: block;
-  }
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
 .overlay__close {
@@ -20,7 +31,7 @@
   position: absolute;
   top: 5px;
   right: 5px;
-  color: white;
+  color: $color-primary;
   padding: 10px;
 }
 
@@ -48,9 +59,9 @@
 }
 
 .overlay__view {
-  border: 1px $color-secondary solid;
+  background: white;
+  border: 1px $color-primary solid;
   padding: 5px;
-  background: black;
   position: absolute;
   top: 0px;
   left: 0px;

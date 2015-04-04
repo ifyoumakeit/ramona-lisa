@@ -91,23 +91,6 @@
   padding-top: 1rem;
 }
 
-.section--invert {
-  background: $color-bg-invert;
-  color: $color-secondary;
-
-  .section__title {
-    color: $color-secondary;
-    border-color: $color-secondary;
-    &:before {
-      border-color: $color-secondary;
-    }
-
-    &:after {
-      background-image: linear-gradient(90deg, transparent 90%, $color-secondary 10%);
-    }
-  }
-}
-
 
 /*=============================
 =            BOXES            =
@@ -117,24 +100,15 @@
   border: 1px $color-primary solid;
 
   &:hover {
-    background: white;
-    border-color: darken($color-primary,50%);
-  }
-
-  .section--invert & {
-    border-color: $color-secondary;
-
-    &:hover {
-      background: black;
-      border-color: lighten($color-primary,50%);
-    }
+    background: $color-secondary;
+    border-color: $color-primary;
   }
 }
 
 /*==============================
 =            CUSTOM            =
 ==============================*/
-
+/*
 .section:nth-child(1) .section__title:before { content: 'I'; }
 .section:nth-child(2) .section__title:before { content: 'II'; }
 .section:nth-child(3) .section__title:before { content: 'III'; }
@@ -147,7 +121,7 @@
 .section--home:after {
   background-image: url(../images/face--down.jpg);
 }
-/*
+
 .section--music:after {
   background-image: url(//placekitten.com/g/1200/700);
 }

@@ -35,6 +35,7 @@ class RamonaLisa
   setupOverlays: ->
     @$overlayClick.click @showOverlay.bind(@)
     @$overlayClose.click @hideOverlay.bind(@)
+    @$overlayBackground.click @hideOverlay.bind(@)
 
   showOverlay: (e) ->
     $overlayClick       = $(e.currentTarget)
@@ -48,26 +49,28 @@ class RamonaLisa
     else
       src = $overlayClick.find('img').attr('src')
 
-    @$overlayBackground.addClass 'on'
+    @$body.addClass 'overlay'
     $overlayContainer.addClass 'open'
     $overlayView.attr 'src', src
 
   hideOverlay: (e) ->
 
-    @$overlayBackground.removeClass 'on'
+    @$body.removeClass 'overlay'
     @$overlayContainers.removeClass 'open'
     @$overlayContainers.find('.overlay__view').attr('src','')
 
   setupLazyLoad: ->  $('img').unveil()
 
   cacheJQuery: ->
+    @$body   = $ 'body'
+
     @$nav       = $ '.navigation'
     @$navToggle = $ '.navigation__toggle'
     @$navItems  = @$nav.find '.navigation__link'
     @$sections  = $ '.section'
 
+    @$overlayBackground = $ '.overlay__background'
     @$overlayContainers   = $ '.overlay__container'
-    @$overlayBackground   = $ '.overlay__background'
     @$overlayClose = @$overlayBackground.find '.overlay__close'
     @$overlayClick = $ '.overlay__click'
 
