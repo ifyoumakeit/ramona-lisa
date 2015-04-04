@@ -952,10 +952,9 @@ body.overlay .overlay__background {
 .about__body {
   background: white;
   padding: 5% 10%;
-  box-shadow: 0 12px 0px -10px #11546e;
 }
 
-/* line 7, ../../src/stylesheets/partials/_section-about.scss */
+/* line 6, ../../src/stylesheets/partials/_section-about.scss */
 .about__caps {
   font-family: Georgia;
   display: inline-block;
@@ -964,4 +963,9 @@ body.overlay .overlay__background {
   font-size: 4rem;
   float: left;
   line-height: 1;
+}
+
+/* line 1, ../../src/stylesheets/partials/_section-performance.scss */
+.performances {
+  width: 100%;
 }
