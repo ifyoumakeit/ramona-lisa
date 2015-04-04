@@ -399,7 +399,7 @@ html {
 /* line 9, ../../src/stylesheets/partials/_base.scss */
 body {
   margin: 0;
-  background: #d2ddd6;
+  background: #ffffff;
   padding: 0 5px;
   color: #11546e;
   font-family: 'Open Sans', sans-serif;
@@ -410,7 +410,7 @@ body {
 
 /* line 22, ../../src/stylesheets/partials/_base.scss */
 a {
-  color: #b88c88;
+  color: #11546e;
 }
 
 /* line 26, ../../src/stylesheets/partials/_base.scss */
@@ -465,7 +465,7 @@ img {
 
 /* line 39, ../../src/stylesheets/partials/_nav.scss */
 .navigation__link {
-  background-color: #d2ddd6;
+  background-color: #ffffff;
   padding: 5px;
   margin: 2px 2px 2px 0;
   display: inline-block;
@@ -477,12 +477,10 @@ img {
   font-size: 1rem;
   border: 1px #11546e solid;
   border-left-width: 0;
-  -webkit-transform: skewY(-5deg);
-  transform: skewY(-5deg);
 }
 /* line 56, ../../src/stylesheets/partials/_nav.scss */
 .navigation__link:after {
-  background: #d2ddd6;
+  background: #ffffff;
   z-index: -1;
   font-weight: bold;
   content: "\203A";
@@ -492,7 +490,7 @@ img {
   border: 1px #11546e solid;
   border-left-width: 0;
   padding: 5px;
-  color: #d2ddd6;
+  color: #ffffff;
   transition: right 0.5s;
 }
 /* line 73, ../../src/stylesheets/partials/_nav.scss */
@@ -542,83 +540,70 @@ img {
   }
 }
 
-/* line 122, ../../src/stylesheets/partials/_nav.scss */
-.navigation__item .navigation__link:before {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  width: 8px;
-  height: 8px;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: bottom center;
-  margin-right: 2px;
+/*
+.navigation__item {
+
+  .navigation__link:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 8px;
+    height: 8px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom center;
+    margin-right: 2px;
+  }
+
+  //
+  &:nth-child(1) .navigation__link:before { background-image: url(../images/icon--a.png)}
+  &:nth-child(2) .navigation__link:before { background-image: url(../images/icon--b.png)}
+  &:nth-child(3) .navigation__link:before { background-image: url(../images/icon--c.png)}
+  &:nth-child(4) .navigation__link:before { background-image: url(../images/icon--d.png)}
+  &:nth-child(5) .navigation__link:before { background-image: url(../images/icon--e.png)}
+  &:nth-child(6) .navigation__link:before { background-image: url(../images/icon--f.png)}
+  &:nth-child(7) .navigation__link:before { background-image: url(../images/icon--g.png)}
+  &:nth-child(8) .navigation__link:before { background-image: url(../images/icon--h.png)}
+  &:nth-child(9) .navigation__link:before { background-image: url(../images/icon--i.png)}
 }
-/* line 134, ../../src/stylesheets/partials/_nav.scss */
-.navigation__item:nth-child(1) .navigation__link:before {
-  background-image: url(../images/icon--a.png);
+*/
+/* line 3, ../../src/stylesheets/partials/_overlay.scss */
+body.overlay .overlay__click {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
 }
-/* line 135, ../../src/stylesheets/partials/_nav.scss */
-.navigation__item:nth-child(2) .navigation__link:before {
-  background-image: url(../images/icon--b.png);
-}
-/* line 136, ../../src/stylesheets/partials/_nav.scss */
-.navigation__item:nth-child(3) .navigation__link:before {
-  background-image: url(../images/icon--c.png);
-}
-/* line 137, ../../src/stylesheets/partials/_nav.scss */
-.navigation__item:nth-child(4) .navigation__link:before {
-  background-image: url(../images/icon--d.png);
-}
-/* line 138, ../../src/stylesheets/partials/_nav.scss */
-.navigation__item:nth-child(5) .navigation__link:before {
-  background-image: url(../images/icon--e.png);
-}
-/* line 139, ../../src/stylesheets/partials/_nav.scss */
-.navigation__item:nth-child(6) .navigation__link:before {
-  background-image: url(../images/icon--f.png);
-}
-/* line 140, ../../src/stylesheets/partials/_nav.scss */
-.navigation__item:nth-child(7) .navigation__link:before {
-  background-image: url(../images/icon--g.png);
-}
-/* line 141, ../../src/stylesheets/partials/_nav.scss */
-.navigation__item:nth-child(8) .navigation__link:before {
-  background-image: url(../images/icon--h.png);
-}
-/* line 142, ../../src/stylesheets/partials/_nav.scss */
-.navigation__item:nth-child(9) .navigation__link:before {
-  background-image: url(../images/icon--i.png);
+/* line 7, ../../src/stylesheets/partials/_overlay.scss */
+body.overlay .overlay__background {
+  display: block;
+  opacity: 1;
 }
 
-/* line 2, ../../src/stylesheets/partials/_overlay.scss */
+/* line 14, ../../src/stylesheets/partials/_overlay.scss */
 .overlay__background {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   z-index: 99;
   display: none;
-}
-/* line 12, ../../src/stylesheets/partials/_overlay.scss */
-.overlay__background.on {
-  display: block;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
-/* line 17, ../../src/stylesheets/partials/_overlay.scss */
+/* line 28, ../../src/stylesheets/partials/_overlay.scss */
 .overlay__close {
   line-height: 1;
   cursor: pointer;
   position: absolute;
   top: 5px;
   right: 5px;
-  color: white;
+  color: #11546e;
   padding: 10px;
 }
 
-/* line 27, ../../src/stylesheets/partials/_overlay.scss */
+/* line 38, ../../src/stylesheets/partials/_overlay.scss */
 .overlay__container {
   position: fixed;
   z-index: 100;
@@ -631,13 +616,13 @@ img {
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
 }
-/* line 37, ../../src/stylesheets/partials/_overlay.scss */
+/* line 48, ../../src/stylesheets/partials/_overlay.scss */
 .overlay__container.open {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
-/* line 42, ../../src/stylesheets/partials/_overlay.scss */
+/* line 53, ../../src/stylesheets/partials/_overlay.scss */
 .overlay__viewer {
   position: relative;
   width: 100%;
@@ -646,11 +631,11 @@ img {
   margin-bottom: 5px;
 }
 
-/* line 50, ../../src/stylesheets/partials/_overlay.scss */
+/* line 61, ../../src/stylesheets/partials/_overlay.scss */
 .overlay__view {
-  border: 1px #b88c88 solid;
+  background: white;
+  border: 1px #11546e solid;
   padding: 5px;
-  background: black;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -758,91 +743,36 @@ img {
   padding-top: 1rem;
 }
 
-/* line 94, ../../src/stylesheets/partials/_section.scss */
-.section--invert {
-  background: #050608;
-  color: #b88c88;
-}
-/* line 98, ../../src/stylesheets/partials/_section.scss */
-.section--invert .section__title {
-  color: #b88c88;
-  border-color: #b88c88;
-}
-/* line 101, ../../src/stylesheets/partials/_section.scss */
-.section--invert .section__title:before {
-  border-color: #b88c88;
-}
-/* line 105, ../../src/stylesheets/partials/_section.scss */
-.section--invert .section__title:after {
-  background-image: linear-gradient(90deg, transparent 90%, #b88c88 10%);
-}
-
 /*=============================
 =            BOXES            =
 =============================*/
-/* line 116, ../../src/stylesheets/partials/_section.scss */
+/* line 99, ../../src/stylesheets/partials/_section.scss */
 .-boxed {
   border: 1px #11546e solid;
 }
-/* line 119, ../../src/stylesheets/partials/_section.scss */
+/* line 102, ../../src/stylesheets/partials/_section.scss */
 .-boxed:hover {
-  background: white;
-  border-color: black;
-}
-/* line 124, ../../src/stylesheets/partials/_section.scss */
-.section--invert .-boxed {
-  border-color: #b88c88;
-}
-/* line 127, ../../src/stylesheets/partials/_section.scss */
-.section--invert .-boxed:hover {
-  background: black;
-  border-color: #90d4ee;
+  background: #d2ddd6;
+  border-color: #11546e;
 }
 
 /*==============================
 =            CUSTOM            =
 ==============================*/
-/* line 138, ../../src/stylesheets/partials/_section.scss */
-.section:nth-child(1) .section__title:before {
-  content: 'I';
-}
+/*
+.section:nth-child(1) .section__title:before { content: 'I'; }
+.section:nth-child(2) .section__title:before { content: 'II'; }
+.section:nth-child(3) .section__title:before { content: 'III'; }
+.section:nth-child(4) .section__title:before { content: 'IV'; }
+.section:nth-child(5) .section__title:before { content: 'V'; }
+.section:nth-child(6) .section__title:before { content: 'VI'; }
+.section:nth-child(7) .section__title:before { content: 'VII'; }
 
-/* line 139, ../../src/stylesheets/partials/_section.scss */
-.section:nth-child(2) .section__title:before {
-  content: 'II';
-}
 
-/* line 140, ../../src/stylesheets/partials/_section.scss */
-.section:nth-child(3) .section__title:before {
-  content: 'III';
-}
-
-/* line 141, ../../src/stylesheets/partials/_section.scss */
-.section:nth-child(4) .section__title:before {
-  content: 'IV';
-}
-
-/* line 142, ../../src/stylesheets/partials/_section.scss */
-.section:nth-child(5) .section__title:before {
-  content: 'V';
-}
-
-/* line 143, ../../src/stylesheets/partials/_section.scss */
-.section:nth-child(6) .section__title:before {
-  content: 'VI';
-}
-
-/* line 144, ../../src/stylesheets/partials/_section.scss */
-.section:nth-child(7) .section__title:before {
-  content: 'VII';
-}
-
-/* line 147, ../../src/stylesheets/partials/_section.scss */
 .section--home:after {
   background-image: url(../images/face--down.jpg);
 }
 
-/*
 .section--music:after {
   background-image: url(//placekitten.com/g/1200/700);
 }
@@ -879,8 +809,8 @@ img {
 /* line 8, ../../src/stylesheets/partials/_section-home.scss */
 .home__title {
   font-size: 3rem;
-  color: white;
-  border: 1px white solid;
+  color: #11546e;
+  border: 1px #11546e solid;
   display: inline-block;
   padding: 2px 5px;
   line-height: 1;
@@ -923,10 +853,10 @@ img {
   padding: 5px;
   letter-spacing: 1px;
   line-height: 1;
-  background: #b88c88;
-  color: #050608;
   margin-bottom: 5px;
   position: relative;
+  background: #11546e;
+  color: #ffffff;
 }
 /* line 29, ../../src/stylesheets/partials/_section-music.scss */
 .album__name:after {
@@ -936,7 +866,7 @@ img {
   z-index: 1;
   height: 6px;
   width: 1px;
-  border-left: 1px #b88c88 solid;
+  border-left: 1px #11546e solid;
   bottom: -6px;
 }
 
@@ -961,10 +891,9 @@ img {
   font-size: 1rem;
   margin-bottom: 3px;
   text-decoration: none;
-  background: black;
   display: inline-block;
 }
-/* line 62, ../../src/stylesheets/partials/_section-music.scss */
+/* line 61, ../../src/stylesheets/partials/_section-music.scss */
 .album__link:before {
   content: '';
   position: absolute;
@@ -973,7 +902,7 @@ img {
   height: 5px;
   bottom: -2px;
   width: 1px;
-  border-left: 1px #b88c88 solid;
+  border-left: 1px #11546e solid;
 }
 
 /* line 5, ../../src/stylesheets/partials/_section-video.scss */
