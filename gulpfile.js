@@ -5,7 +5,8 @@ var gulp            = require('gulp'),
     browserSync = require('browser-sync'),
     reload      = browserSync.reload,
     del         = require('del'),
-    ghPages     = require('gulp-gh-pages');
+    ghPages     = require('gulp-gh-pages'),
+    browserifyHandlebars = require('browserify-handlebars');
 
 gulp.task('browser-sync', function() {
   browserSync({
@@ -35,7 +36,7 @@ gulp.task('coffee', function() {
     .pipe($.browserify({
       debug: true,
       insertGlobals: false,
-      transform: ['coffeeify'],
+      transform: ['coffeeify', browserifyHandlebars],
       extensions: ['.coffee']
     }))
     .pipe( $.rename('app.js') )

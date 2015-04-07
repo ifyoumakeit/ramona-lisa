@@ -56,6 +56,19 @@ html.no-js
     .overlay__background
       .overlay__close. &times;
 
+    script(id="entry-template" type="text/x-handlebars-template")
+      .accordion__table
+        {{#each this}}
+        .accordion__row
+          .accordion__date {{date}}
+          .accordion__name {{name}}
+          .accordion__info {{info}}
+        .accordion__media
+          {{media media}}
+        {{/each}}
+
+
+
   script(src="scripts/app.js")
 
   //- Google Analytics: change UA-XXXXX-X to be your site's ID.

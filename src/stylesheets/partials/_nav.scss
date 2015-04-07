@@ -18,7 +18,7 @@
     transform: translateX(-120%);
   }
 
-  @include grid-media-query('xl'){
+  @include grid-media-query('m'){
 
     transform: translateX(0) !important;
     font-size: 1.2rem;
@@ -112,7 +112,7 @@
     border-radius: 50%;
   }
 
-  @include grid-media-query('xl'){
+  @include grid-media-query('m'){
     display: none;
   }
 }

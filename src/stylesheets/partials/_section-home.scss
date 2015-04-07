@@ -14,7 +14,7 @@
   line-height: 1;
   letter-spacing: 1px;
 
-  @include grid-media-query('xl'){
+  @include grid-media-query('m'){
     font-size: 6rem;
   }
 }

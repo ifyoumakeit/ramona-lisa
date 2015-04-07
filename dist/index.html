@@ -77,29 +77,7 @@
         <div class="section__container">
           <div class="section__title">Photos</div>
           <div class="section__body">
-            <div class="overlay__container">
-              <div class="overlay__viewer"><img class="overlay__view"></div>
-            </div>
-            <div class="photos">
-              <div class="photo overlay__click"><img src="images/loader.jpg" data-src="images/bug_eye.jpg" width="800" height="450" class="photo__image -boxed">
-                <div class="photo__title">Arcadia</div>
-              </div>
-              <div class="photo overlay__click"><img src="images/loader.jpg" data-src="images/dirt.jpg" width="800" height="450" class="photo__image -boxed">
-                <div class="photo__title">Dominic</div>
-              </div>
-              <div class="photo overlay__click"><img src="images/loader.jpg" data-src="images/face--up.jpg" width="800" height="450" class="photo__image -boxed">
-                <div class="photo__title">Backwards And Upwards [Lyric Vid]</div>
-              </div>
-              <div class="photo overlay__click"><img src="images/loader.jpg" data-src="images/leaves.jpg" width="800" height="450" class="photo__image -boxed">
-                <div class="photo__title">I Love Our World (*will finish)</div>
-              </div>
-              <div class="photo overlay__click"><img src="images/loader.jpg" data-src="images/walk--behind.jpg" width="800" height="450" class="photo__image -boxed">
-                <div class="photo__title">"The Lady's Got Gills"</div>
-              </div>
-              <div class="photo overlay__click"><img src="images/loader.jpg" data-src="images/walk.jpg" width="800" height="450" class="photo__image -boxed">
-                <div class="photo__title">"Making of Arcadia" (mssngpeces doc)</div>
-              </div>
-            </div>
+            <div id="photos"></div>
           </div>
         </div>
       </section>
@@ -108,8 +86,9 @@
           <div class="section__title">VIDEO</div>
           <div class="section__body">
             <div class="overlay__container">
-              <div class="overlay__viewer"></div>
-              <iframe src="" class="overlay__view"></iframe>
+              <div class="overlay__viewer">
+                <iframe src="" class="overlay__view"></iframe>
+              </div>
             </div>
             <div class="videos">
               <div data-video="eghzhlbv6Cc" class="video overlay__click"><img src="images/loader.jpg" data-src="http://img.youtube.com/vi/eghzhlbv6Cc/mqdefault.jpg" width="800" height="450" class="video__image -boxed">
@@ -144,11 +123,7 @@
         <div class="section__container">
           <div class="section__title">CHOREOGRAPHY</div>
           <div class="section__body">
-            <div class="videos">
-              <div class="video">
-                <div class="video__title"></div>
-              </div>
-            </div>
+            <div id="choreographies"></div>
           </div>
         </div>
       </section>
@@ -156,71 +131,7 @@
         <div class="section__container">
           <div class="section__title">PERFORMANCE</div>
           <div class="section__body">
-            <table class="performances">
-              <tr class="performance">
-                <th>Title</th>
-                <th>Place</th>
-                <th>Information</th>
-              </tr>
-              <tr class="performance">
-                <td class="performance__title">LPR - "Ramona Lisa"</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr class="performance">
-                <td class="performance__title">LPR - "Ramona Lisa"</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr class="performance">
-                <td class="performance__title">LPR - "Kimisin Kreft"</td>
-              </tr>
-              <tr class="performance">
-                <td class="performance__title">LPR - "Ramona Lisa"</td>
-                <td>Shea Stadium</td>
-                <td>"Agatha Dimm"</td>
-              </tr>
-              <tr class="performance">
-                <td class="performance__title">LPR - "Ramona Lisa</td>
-                <td>"Baby's Alright</td>
-                <td>"Theora Vorbis"</td>
-              </tr>
-              <tr class="performance">
-                <td class="performance__title">LPR - "Ramona Lisa</td>
-                <td>"Palm Springs</td>
-                <td>"Ramona Lisa"</td>
-              </tr>
-              <tr class="performance">
-                <td class="performance__title">LPR - "Ramona Lisa"</td>
-                <td>Baby's Alright</td>
-                <td>"Ramona Lisa" trio</td>
-              </tr>
-              <tr class="performance">
-                <td class="performance__title">LPR - "Ramona Lisa"</td>
-                <td>PS1</td>
-                <td></td>
-              </tr>
-              <tr class="performance">
-                <td class="performance__title">LPR - "Ramona Lisa"</td>
-                <td>Courtyard Theatre</td>
-                <td></td>
-              </tr>
-              <tr class="performance">
-                <td class="performance__title">LPR - "Ramona Lisa"</td>
-                <td>Le Carmen</td>
-                <td></td>
-              </tr>
-              <tr class="performance">
-                <td class="performance__title">LPR - "Ramona Lisa"</td>
-                <td>Villa Medici</td>
-                <td>(*w Video)</td>
-              </tr>
-              <tr class="performance">
-                <td class="performance__title">LPR - "Ramona Lisa"</td>
-                <td>LPR</td>
-                <td>(*w Video)</td>
-              </tr>
-            </table>
+            <div id="performances"></div>
           </div>
         </div>
       </section>
@@ -240,6 +151,16 @@
     <div class="overlay__background">
       <div class="overlay__close">&times;</div>
     </div>
+    <script id="entry-template" type="text/x-handlebars-template">
+      <div class="accordion__table">{{#each this}}
+        <div class="accordion__row">
+          <div class="accordion__date">{{date}}</div>
+          <div class="accordion__name">{{name}}</div>
+          <div class="accordion__info">{{info}}</div>
+        </div>
+        <div class="accordion__media">{{media media}}</div>{{/each}}
+      </div>
+    </script>
   </body>
   <script src="scripts/app.js"></script>
 </html>
