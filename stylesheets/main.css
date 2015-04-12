@@ -861,6 +861,27 @@ body.overlay .overlay__background {
   z-index: 2;
 }
 
+/* line 6, ../../src/stylesheets/partials/_section-lyrics.scss */
+.section__pages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 4800px;
+}
+
+/* line 13, ../../src/stylesheets/partials/_section-lyrics.scss */
+.section__page {
+  display: inline-block;
+  width: 320px;
+}
+
+/* line 18, ../../src/stylesheets/partials/_section-lyrics.scss */
+.section__scroll {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+}
+
 /* line 6, ../../src/stylesheets/partials/_section-music.scss */
 .album {
   margin-bottom: 10px;
