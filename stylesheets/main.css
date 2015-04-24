@@ -860,7 +860,7 @@ body.overlay .overlay__background {
   z-index: 2;
 }
 
-/* line 6, ../../src/stylesheets/partials/_section-lyrics.scss */
+/* line 7, ../../src/stylesheets/partials/_section-lyrics.scss */
 .section__pages {
   position: relative;
   list-style: none;
@@ -870,7 +870,7 @@ body.overlay .overlay__background {
   margin: 0;
 }
 
-/* line 15, ../../src/stylesheets/partials/_section-lyrics.scss */
+/* line 16, ../../src/stylesheets/partials/_section-lyrics.scss */
 .section__page {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -880,13 +880,13 @@ body.overlay .overlay__background {
   left: 0;
   top: 0;
 }
-/* line 23, ../../src/stylesheets/partials/_section-lyrics.scss */
+/* line 24, ../../src/stylesheets/partials/_section-lyrics.scss */
 .section__page:first-child {
   position: relative;
   display: block;
   float: left;
 }
-/* line 29, ../../src/stylesheets/partials/_section-lyrics.scss */
+/* line 30, ../../src/stylesheets/partials/_section-lyrics.scss */
 .section__page img {
   display: block;
   height: auto;
@@ -895,9 +895,10 @@ body.overlay .overlay__background {
   border: 0;
 }
 
-/* line 41, ../../src/stylesheets/partials/_section-lyrics.scss */
-.section__arrow {
+/* line 42, ../../src/stylesheets/partials/_section-lyrics.scss */
+.section__pages_nav {
   font-size: 4rem;
+  text-decoration: none;
   position: absolute;
   z-index: 99;
   cursor: pointer;
@@ -906,8 +907,8 @@ body.overlay .overlay__background {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 50, ../../src/stylesheets/partials/_section-lyrics.scss */
-.section__arrow.section__arrow--right {
+/* line 52, ../../src/stylesheets/partials/_section-lyrics.scss */
+.section__pages_nav.next {
   right: 10px;
   left: auto;
 }
