@@ -404,7 +404,7 @@ body {
   color: #11546e;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.6rem;
-  line-height: 1.625;
+  line-height: 2;
   position: relative;
 }
 
@@ -421,7 +421,7 @@ img {
 
 /* line 1, ../../src/stylesheets/partials/_nav.scss */
 .navigation {
-  font-size: 1.6rem;
+  font-size: 1rem;
   line-height: 1.5;
   position: fixed;
   z-index: 10;
@@ -447,7 +447,7 @@ img {
   .navigation {
     -webkit-transform: translateX(0) !important;
     transform: translateX(0) !important;
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1;
   }
 }
@@ -611,8 +611,8 @@ body.overlay .overlay__background {
   left: 50%;
   width: 100%;
   max-width: 900px;
-  -webkit-transform: translate(-50%, -200%);
-  transform: translate(-50%, -200%);
+  -webkit-transform: translate(-50%, -400%);
+  transform: translate(-50%, -400%);
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
 }
@@ -708,7 +708,6 @@ body.overlay .overlay__background {
   text-transform: uppercase;
   border-left: 1px #11546e solid;
   border-bottom: 1px #11546e solid;
-  font-size: 1rem;
   letter-spacing: 1px;
   line-height: 1;
   font-weight: bold;
@@ -717,7 +716,7 @@ body.overlay .overlay__background {
   margin-bottom: 2rem;
   padding: 0 0 5px 5px;
 }
-/* line 69, ../../src/stylesheets/partials/_section.scss */
+/* line 68, ../../src/stylesheets/partials/_section.scss */
 .section__title:before {
   position: relative;
   display: inline-block;
@@ -726,7 +725,7 @@ body.overlay .overlay__background {
   margin-right: 5px;
   margin-top: 1px;
 }
-/* line 78, ../../src/stylesheets/partials/_section.scss */
+/* line 77, ../../src/stylesheets/partials/_section.scss */
 .section__title:after {
   content: '';
   position: absolute;
@@ -738,7 +737,7 @@ body.overlay .overlay__background {
   background-size: 10px 10px;
 }
 
-/* line 90, ../../src/stylesheets/partials/_section.scss */
+/* line 89, ../../src/stylesheets/partials/_section.scss */
 .section__body {
   padding-top: 1rem;
 }
@@ -746,11 +745,11 @@ body.overlay .overlay__background {
 /*=============================
 =            BOXES            =
 =============================*/
-/* line 99, ../../src/stylesheets/partials/_section.scss */
+/* line 98, ../../src/stylesheets/partials/_section.scss */
 .-boxed {
   border: 1px #11546e solid;
 }
-/* line 102, ../../src/stylesheets/partials/_section.scss */
+/* line 101, ../../src/stylesheets/partials/_section.scss */
 .-boxed:hover {
   background: #d2ddd6;
   border-color: #11546e;
@@ -759,22 +758,22 @@ body.overlay .overlay__background {
 /*=================================
 =            ACCORDION            =
 =================================*/
-/* line 112, ../../src/stylesheets/partials/_section.scss */
+/* line 111, ../../src/stylesheets/partials/_section.scss */
 .accordion__table {
   width: 100%;
 }
 
-/* line 116, ../../src/stylesheets/partials/_section.scss */
+/* line 115, ../../src/stylesheets/partials/_section.scss */
 .accordion__media {
   display: none;
 }
 
-/* line 120, ../../src/stylesheets/partials/_section.scss */
+/* line 119, ../../src/stylesheets/partials/_section.scss */
 .accordion__row {
   cursor: pointer;
 }
 
-/* line 124, ../../src/stylesheets/partials/_section.scss */
+/* line 123, ../../src/stylesheets/partials/_section.scss */
 .accordion__date,
 .accordion__name,
 .accordion__info {
@@ -861,6 +860,59 @@ body.overlay .overlay__background {
   z-index: 2;
 }
 
+/* line 7, ../../src/stylesheets/partials/_section-lyrics.scss */
+.section__pages {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 16, ../../src/stylesheets/partials/_section-lyrics.scss */
+.section__page {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+/* line 24, ../../src/stylesheets/partials/_section-lyrics.scss */
+.section__page:first-child {
+  position: relative;
+  display: block;
+  float: left;
+}
+/* line 30, ../../src/stylesheets/partials/_section-lyrics.scss */
+.section__page img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+}
+
+/* line 42, ../../src/stylesheets/partials/_section-lyrics.scss */
+.section__pages_nav {
+  font-size: 4rem;
+  text-decoration: none;
+  position: absolute;
+  z-index: 99;
+  cursor: pointer;
+  top: 50%;
+  left: 10px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 52, ../../src/stylesheets/partials/_section-lyrics.scss */
+.section__pages_nav.next {
+  right: 10px;
+  left: auto;
+}
+
 /* line 6, ../../src/stylesheets/partials/_section-music.scss */
 .album {
   margin-bottom: 10px;
@@ -909,26 +961,27 @@ body.overlay .overlay__background {
 .album__note {
   position: relative;
   z-index: 1;
-}
-
-/* line 54, ../../src/stylesheets/partials/_section-music.scss */
-.album__link {
-  padding: 5px;
+  line-height: 1;
   font-size: 1rem;
-  margin-bottom: 3px;
-  text-decoration: none;
-  display: inline-block;
 }
-/* line 61, ../../src/stylesheets/partials/_section-music.scss */
-.album__link:before {
+/* line 55, ../../src/stylesheets/partials/_section-music.scss */
+.album__note:not(:last-child):before {
   content: '';
   position: absolute;
   left: 50%;
   z-index: 1;
   height: 5px;
-  bottom: -2px;
+  bottom: -1px;
   width: 1px;
   border-left: 1px #11546e solid;
+}
+
+/* line 68, ../../src/stylesheets/partials/_section-music.scss */
+.album__link {
+  padding: 5px;
+  margin-bottom: 3px;
+  text-decoration: none;
+  display: inline-block;
 }
 
 /* line 5, ../../src/stylesheets/partials/_section-video.scss */
@@ -995,17 +1048,6 @@ body.overlay .overlay__background {
 .about__body {
   background: white;
   padding: 5% 10%;
-}
-
-/* line 6, ../../src/stylesheets/partials/_section-about.scss */
-.about__caps {
-  font-family: Georgia;
-  display: inline-block;
-  padding: 5px 10px;
-  margin-right: 5px;
-  font-size: 4rem;
-  float: left;
-  line-height: 1;
 }
 
 /* line 1, ../../src/stylesheets/partials/_section-performance.scss */

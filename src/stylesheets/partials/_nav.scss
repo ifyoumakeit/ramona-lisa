@@ -1,5 +1,5 @@
 .navigation {
-  font-size: 1.6rem;
+  font-size: $fontSize-small;
   line-height: 1.5;
   position: fixed;
   z-index: 10;
@@ -21,7 +21,7 @@
   @include grid-media-query('m'){
 
     transform: translateX(0) !important;
-    font-size: 1.2rem;
+    font-size: $fontSize-small;
     line-height: 1;
 
   }

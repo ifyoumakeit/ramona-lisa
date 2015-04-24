@@ -49,25 +49,26 @@
 .album__note {
   position: relative;
   z-index: 1;
-}
+  line-height: 1;
+  font-size: $fontSize-small;
 
-.album__link {
-  padding: 5px;
-  font-size: 1rem;
-  margin-bottom: 3px;
-  text-decoration: none;
-  display: inline-block;
-
-  &:before {
+  &:not(:last-child):before {
     content: '';
     position: absolute;
     left: 50%;
     z-index: 1;
     height: 5px;
-    bottom: -2px;
+    bottom: -1px;
     width: 1px;
     border-left: 1px $color-primary solid;
   }
 
+}
+
+.album__link {
+  padding: 5px;
+  margin-bottom: 3px;
+  text-decoration: none;
+  display: inline-block;
 }
 

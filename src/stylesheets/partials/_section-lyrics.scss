@@ -1,0 +1,57 @@
+$images: 14;
+$width: 100%;
+
+$total: $width * ($images + 1);
+
+
+.section__pages {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.section__page {
+  backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+
+  &:first-child {
+    position: relative;
+    display: block;
+    float: left;
+  }
+
+  img {
+
+    display: block;
+    height: auto;
+    float: left;
+    width: 100%;
+    border: 0;
+
+  }
+
+}
+
+.section__pages_nav {
+  font-size: $fontSize-large;
+  text-decoration: none;
+  position: absolute;
+  z-index: 99;
+  cursor: pointer;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+
+  &.next {
+    right: 10px;
+    left: auto;
+  }
+
+}

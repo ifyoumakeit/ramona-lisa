@@ -48,7 +48,7 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('images', function() {
-  return gulp.src('./src/images/*')
+  return gulp.src('./src/images/**/*')
     .pipe($.imagemin({
       progressive: true
     }))

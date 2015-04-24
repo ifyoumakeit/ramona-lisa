@@ -3,6 +3,7 @@ _ = require "../bower_components/underscore/underscore-min"
 
 require "../bower_components/velocity/velocity.min"
 require "../bower_components/unveil/jquery.unveil.min"
+require "../bower_components/jquery.responsive-slides/jquery.responsive-slides.min"
 Tabletop = require("../bower_components/tabletop/src/tabletop").Tabletop
 
 Handlebars = require 'Handlebars'
@@ -109,6 +110,16 @@ class RamonaLisa
 
     @$template = $("#entry-template")
 
+    @$pages = $(".section__pages")
+
+  setupLyricsSlider: ->
+    log 'setupLyricsSlider'
+    $('.section__arrow--right').click @arrowRightClick.bind(@)
+    $('.section__arrow--left').click @arrowLeftClick.bind(@)
+
+  arrowRightClick: -> @$pages.velocity translateX: "-=6.666666%"
+  arrowLeftClick: -> @$pages.velocity translateX: "+=6.666666%"
+
   setupHelpers: ->
     log 'setupHelpers'
     Handlebars.registerHelper 'media', (item) ->
@@ -146,6 +157,14 @@ class RamonaLisa
     @setupHelpers()
     @setupTemplates()
     @setupAccordions()
+
+    $(".section__pages").responsiveSlides
+      auto: false
+      nav: true
+      namespace: 'section__pages'
+      prevText: "&lsaquo;"
+      nextText: "&rsaquo;"
+
 
 
 $ ->
