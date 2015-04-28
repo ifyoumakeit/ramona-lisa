@@ -896,20 +896,25 @@ body.overlay .overlay__background {
 }
 
 /* line 42, ../../src/stylesheets/partials/_section-lyrics.scss */
+.section__scroll {
+  position: relative;
+}
+
+/* line 46, ../../src/stylesheets/partials/_section-lyrics.scss */
 .section__pages_nav {
-  font-size: 4rem;
+  font-size: 8rem;
   text-decoration: none;
   position: absolute;
-  z-index: 99;
+  z-index: 10;
   cursor: pointer;
   top: 50%;
-  left: 10px;
+  left: -35px;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 52, ../../src/stylesheets/partials/_section-lyrics.scss */
+/* line 56, ../../src/stylesheets/partials/_section-lyrics.scss */
 .section__pages_nav.next {
-  right: 10px;
+  right: -35px;
   left: auto;
 }
 
