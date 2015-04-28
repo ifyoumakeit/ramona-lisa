@@ -84,6 +84,7 @@ class RamonaLisa
         $('body').removeClass 'overlay'
         $(@).find('.overlay__view').attr('src','')
 
+
   setupLazyLoad: ->
     log 'setupLazyLoad'
     $('img').unveil()
