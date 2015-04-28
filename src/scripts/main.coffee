@@ -68,14 +68,21 @@ class RamonaLisa
       src = $overlayClick.find('img').attr('src')
 
     @$body.addClass 'overlay'
-    $overlayContainer.addClass 'open'
-    $overlayView.attr 'src', src
+    $overlayContainer.velocity
+      translateZ: 0
+      translateX: '-50%'
+      translateY: '-50%'
+      complete: -> $overlayView.attr 'src', src
 
   hideOverlay: (e) ->
     log 'hideOverlay'
-    @$body.removeClass 'overlay'
-    @$overlayContainers.removeClass 'open'
-    @$overlayContainers.find('.overlay__view').attr('src','')
+    @$overlayContainers.velocity
+      translateZ: 0
+      translateX: '-50%'
+      translateY: '-400%'
+      complete: ->
+        $('body').removeClass 'overlay'
+        $(@).find('.overlay__view').attr('src','')
 
   setupLazyLoad: ->
     log 'setupLazyLoad'
@@ -88,11 +95,12 @@ class RamonaLisa
       $next = $(@).next(".accordion__media")
 
       if $next.css('display') is 'block'
+        $next.velocity 'slideUp'
         return
 
       $next.velocity 'slideDown'
       $next.siblings('.accordion__media').velocity 'slideUp',
-        complete: -> $el.velocity 'scroll'
+        complete: -> $el.velocity('stop').velocity 'scroll'
 
   cacheJQuery: ->
     log 'cacheJQuery'

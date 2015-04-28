@@ -39,18 +39,22 @@ $total: $width * ($images + 1);
 
 }
 
+.section__scroll {
+  position: relative;
+}
+
 .section__pages_nav {
-  font-size: $fontSize-large;
+  font-size: $fontSize-large * 2;
   text-decoration: none;
   position: absolute;
-  z-index: 99;
+  z-index: 10;
   cursor: pointer;
   top: 50%;
-  left: 10px;
+  left: -35px;
   transform: translateY(-50%);
 
   &.next {
-    right: 10px;
+    right: -35px;
     left: auto;
   }
 
