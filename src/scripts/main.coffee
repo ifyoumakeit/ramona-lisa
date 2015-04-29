@@ -94,7 +94,6 @@ class RamonaLisa
 
       $next.siblings('.accordion__media:visible').velocity 'slideUp',
         complete: ->
-          console.log $(@).find('.viewer')
           $(@).find('.viewer').attr('src', '');
           $el.velocity('stop').velocity 'scroll'
 
