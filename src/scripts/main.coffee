@@ -18,18 +18,6 @@ log = ->
 
 class RamonaLisa
 
-  setHeights: ->
-    log 'setHeights'
-    @isMobile = @$navToggle.is ':visible'
-    @$sections.css 'min-height', $(window).height()
-
-    @$nav.removeClass('closed') unless @isMobile
-
-  prepareSections: ->
-    log 'prepareSections'
-    @setHeights()
-    $(window).resize _.debounce @setHeights.bind(@), 500
-
   setupNavigation: ->
     log 'setupNavigation'
     @$navItems.click   @handleNavClick.bind(@)
@@ -91,11 +79,11 @@ class RamonaLisa
       $next.velocity 'slideDown',
         complete: ->
           $(@).find('.viewer').attr('src', $next.find('.viewer').attr('data-src'));
+          $el.velocity('stop').velocity 'scroll'
 
       $next.siblings('.accordion__media:visible').velocity 'slideUp',
         complete: ->
           $(@).find('.viewer').attr('src', '');
-          $el.velocity('stop').velocity 'scroll'
 
   cacheJQuery: ->
     log 'cacheJQuery'
@@ -144,7 +132,6 @@ class RamonaLisa
     @tabletop = tabletop
 
     @cacheJQuery()
-    @prepareSections()
     @setupLazyLoad()
     @setupNavigation()
     @setupOverlays()
@@ -166,4 +153,3 @@ $ ->
     debug: true
     callback: RamonaLisa.init.bind(RamonaLisa)
   )
-

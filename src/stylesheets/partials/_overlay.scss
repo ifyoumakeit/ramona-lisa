@@ -30,10 +30,11 @@ body.overlay {
   line-height: 1;
   cursor: pointer;
   position: absolute;
-  top: 5px;
+  top: 0;
   right: 5px;
   color: $color-primary;
   padding: 10px;
+  font-size: 4rem;
 }
 
 .overlay__container {

@@ -601,13 +601,14 @@ body.overlay .overlay__background {
   line-height: 1;
   cursor: pointer;
   position: absolute;
-  top: 5px;
+  top: 0;
   right: 5px;
   color: #11546e;
   padding: 10px;
+  font-size: 4rem;
 }
 
-/* line 39, ../../src/stylesheets/partials/_overlay.scss */
+/* line 40, ../../src/stylesheets/partials/_overlay.scss */
 .overlay__container {
   position: fixed;
   z-index: 100;
@@ -618,13 +619,13 @@ body.overlay .overlay__background {
   -webkit-transform: translate(-50%, -400%);
   transform: translate(-50%, -400%);
 }
-/* line 48, ../../src/stylesheets/partials/_overlay.scss */
+/* line 49, ../../src/stylesheets/partials/_overlay.scss */
 .overlay__container.open {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
-/* line 53, ../../src/stylesheets/partials/_overlay.scss */
+/* line 54, ../../src/stylesheets/partials/_overlay.scss */
 .overlay__viewer {
   position: relative;
   width: 100%;
@@ -633,7 +634,7 @@ body.overlay .overlay__background {
   margin-bottom: 5px;
 }
 
-/* line 61, ../../src/stylesheets/partials/_overlay.scss */
+/* line 62, ../../src/stylesheets/partials/_overlay.scss */
 .overlay__view {
   background: white;
   border: 1px #11546e solid;
@@ -653,7 +654,7 @@ body.overlay .overlay__background {
   text-align: center;
   position: relative;
   overflow: hidden;
-  min-height: 0;
+  min-height: 100vh;
   transition: min-height 0.5s;
 }
 /* line 9, ../../src/stylesheets/partials/_section.scss */
@@ -773,9 +774,14 @@ body.overlay .overlay__background {
 /* line 119, ../../src/stylesheets/partials/_section.scss */
 .accordion__row {
   cursor: pointer;
+  border-bottom: 1px #d2ddd6 solid;
+}
+/* line 123, ../../src/stylesheets/partials/_section.scss */
+.accordion__row:nth-last-child(2) {
+  border: 0;
 }
 
-/* line 123, ../../src/stylesheets/partials/_section.scss */
+/* line 128, ../../src/stylesheets/partials/_section.scss */
 .accordion__date,
 .accordion__name,
 .accordion__info {
@@ -783,51 +789,6 @@ body.overlay .overlay__background {
   width: 32%;
 }
 
-/*==============================
-=            CUSTOM            =
-==============================*/
-/*
-.section:nth-child(1) .section__title:before { content: 'I'; }
-.section:nth-child(2) .section__title:before { content: 'II'; }
-.section:nth-child(3) .section__title:before { content: 'III'; }
-.section:nth-child(4) .section__title:before { content: 'IV'; }
-.section:nth-child(5) .section__title:before { content: 'V'; }
-.section:nth-child(6) .section__title:before { content: 'VI'; }
-.section:nth-child(7) .section__title:before { content: 'VII'; }
-
-
-.section--home:after {
-  background-image: url(../images/face--down.jpg);
-}
-
-.section--music:after {
-  background-image: url(//placekitten.com/g/1200/700);
-}
-
-.section--lyrics:after {
-  background-image: url(//placekitten.com/g/1200/800);
-}
-
-.section--about:after {
-  background-image: url(//placekitten.com/g/1200/900);
-}
-
-.section--photo:after {
-  background-image: url(//placekitten.com/g/1200/1000);
-}
-
-.section--video:after {
-  background-image: url(//placekitten.com/g/700/1100);
-}
-
-.section--choreography:after {
-  background-image: url(//placekitten.com/g/2000/2000);
-}
-
-.section--performance:after {
-  background-image: url(//placekitten.com/g/1200/1200);
-}
-*/
 /* line 3, ../../src/stylesheets/partials/_section-home.scss */
 .section--home .section__container {
   text-align: center;
