@@ -1,12 +1,13 @@
 body.overlay {
+  overflow: hidden;
 
   .overlay__click {
     filter: blur(5px);
   }
 
   .overlay__background {
-    display: block;
     opacity: 1;
+    pointer-events: auto;
   }
 }
 
@@ -19,10 +20,10 @@ body.overlay {
   left: 0;
   background: rgba(255, 255, 255, 0.9);
   z-index: 99;
-  display: none;
+  pointer-events: none;
 
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: opacity 0.4s;
 }
 
 .overlay__close {
@@ -43,7 +44,6 @@ body.overlay {
   width: 100%;
   max-width: 900px;
   transform: translate(-50%, -400%);
-  transition: transform 0.5s;
 
   &.open {
     transform: translate(-50%, -50%)

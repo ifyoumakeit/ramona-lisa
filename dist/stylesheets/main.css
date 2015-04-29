@@ -393,7 +393,7 @@
 
 /* line 5, ../../src/stylesheets/partials/_base.scss */
 html {
-  font-size: 62.5%;
+  font-size: 10px;
 }
 
 /* line 9, ../../src/stylesheets/partials/_base.scss */
@@ -567,18 +567,22 @@ img {
   &:nth-child(9) .navigation__link:before { background-image: url(../images/icon--i.png)}
 }
 */
-/* line 3, ../../src/stylesheets/partials/_overlay.scss */
+/* line 1, ../../src/stylesheets/partials/_overlay.scss */
+body.overlay {
+  overflow: hidden;
+}
+/* line 4, ../../src/stylesheets/partials/_overlay.scss */
 body.overlay .overlay__click {
   -webkit-filter: blur(5px);
   filter: blur(5px);
 }
-/* line 7, ../../src/stylesheets/partials/_overlay.scss */
+/* line 8, ../../src/stylesheets/partials/_overlay.scss */
 body.overlay .overlay__background {
-  display: block;
   opacity: 1;
+  pointer-events: auto;
 }
 
-/* line 14, ../../src/stylesheets/partials/_overlay.scss */
+/* line 15, ../../src/stylesheets/partials/_overlay.scss */
 .overlay__background {
   position: fixed;
   top: 0;
@@ -587,12 +591,12 @@ body.overlay .overlay__background {
   left: 0;
   background: rgba(255, 255, 255, 0.9);
   z-index: 99;
-  display: none;
+  pointer-events: none;
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: opacity 0.4s;
 }
 
-/* line 28, ../../src/stylesheets/partials/_overlay.scss */
+/* line 29, ../../src/stylesheets/partials/_overlay.scss */
 .overlay__close {
   line-height: 1;
   cursor: pointer;
@@ -603,7 +607,7 @@ body.overlay .overlay__background {
   padding: 10px;
 }
 
-/* line 38, ../../src/stylesheets/partials/_overlay.scss */
+/* line 39, ../../src/stylesheets/partials/_overlay.scss */
 .overlay__container {
   position: fixed;
   z-index: 100;
@@ -613,8 +617,6 @@ body.overlay .overlay__background {
   max-width: 900px;
   -webkit-transform: translate(-50%, -400%);
   transform: translate(-50%, -400%);
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
 }
 /* line 48, ../../src/stylesheets/partials/_overlay.scss */
 .overlay__container.open {
