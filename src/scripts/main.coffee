@@ -12,6 +12,10 @@ log = -> return false
 
 class RamonaLisa
 
+  options:
+    duration: 200
+    easing: 'swing'
+
   setupNavigation: ->
     log 'setupNavigation'
     @$navItems.click   @handleNavClick.bind(@)
@@ -64,12 +68,12 @@ class RamonaLisa
 
       if $next.css('display') is 'block'
         $el.removeClass 'clicked'
-        $next.velocity 'slideUp'
+        $next.velocity 'slideUp', options
         return
 
-      $next.velocity 'slideDown'
+      $next.velocity 'slideDown', options
       console.log $next, $next.siblings('.accordion__target:visible')
-      $next.siblings('.accordion__target:visible').velocity 'slideUp'
+      $next.siblings('.accordion__target:visible').velocity 'slideUp', options
       $el.siblings('.clicked').removeClass 'clicked'
 
   cacheJQuery: ->
