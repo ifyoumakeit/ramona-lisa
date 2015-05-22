@@ -68,12 +68,12 @@ class RamonaLisa
 
       if $next.css('display') is 'block'
         $el.removeClass 'clicked'
-        $next.velocity 'slideUp', options
+        $next.velocity 'slideUp', @options
         return
 
-      $next.velocity 'slideDown', options
-      console.log $next, $next.siblings('.accordion__target:visible')
-      $next.siblings('.accordion__target:visible').velocity 'slideUp', options
+      $next.velocity 'slideDown', @options
+
+      $next.siblings('.accordion__target:visible').velocity 'slideUp', @options
       $el.siblings('.clicked').removeClass 'clicked'
 
   cacheJQuery: ->
