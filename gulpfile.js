@@ -40,6 +40,7 @@ gulp.task('coffee', function() {
       extensions: ['.coffee']
     }))
     .pipe( $.rename('app.js') )
+    .pipe( $.uglify())
     .pipe( gulp.dest('dist/scripts') );
 });
 

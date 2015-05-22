@@ -136,24 +136,297 @@
         <div class="section__container">
           <div class="section__title">Photos</div>
           <div class="section__body">
-            <div id="photos"></div>
-          </div>
-          <script id="photo-template" type="text/x-handlebars-template">
-            <div class="accordion__table">{{#each this}}
-              <div class="accordion__row accordion__click">{{#if date}}
-                <div class="accordion__cell accordion__year">{{date}}</div>{{/if}}
-                {{#if title}}
-                <div class="accordion__cell accordion__title">{{title}}</div>{{/if}}
-                {{#if photographer}}
-                <div class="accordion__cell accordion__photographer">{{photographer}}</div>{{/if}}
-                {{#if source}}
-                <div class="accordion__cell accordion__source">{{source}}</div>{{/if}}
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">I Love Our World Composition</div>
+                <div class="accordion__cell accordion__photographer">Ramona Lisa</div>
+                <div class="accordion__cell accordion__source">Arcadia</div>
               </div>
               <div class="accordion__row accordion__target">
-                <div class="accordion__cell accordion__media"><img src="images/photos/{{file}}"></div>
-              </div>{{/each}}
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/i-love-our-world-composition-2014-ramona-lisa-arcadia.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Backstage after record release show</div>
+                <div class="accordion__cell accordion__photographer">Eric Epstien</div>
+                <div class="accordion__cell accordion__source">Private Collection</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/backstage-after-record-release-show-2014-eric-epstien-private-collection.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Backstage at United Palace Theatre</div>
+                <div class="accordion__cell accordion__photographer">Callie Barlow</div>
+                <div class="accordion__cell accordion__source">Private Collection</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/backstage-at-united-palace-theatre-2014-callie-barlow-private-collection.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Backstage with performer Sonja Mauro</div>
+                <div class="accordion__cell accordion__photographer">Callie Barlow</div>
+                <div class="accordion__cell accordion__source">Private Collection</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/backstage-with-performer-sonja-mauro-2014-callie-barlow-private-collection.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Behind The Scenes of Choreography Shoot</div>
+                <div class="accordion__cell accordion__photographer">Amanda Vincelli</div>
+                <div class="accordion__cell accordion__source">Ramona Lisa</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/behind-the-scenes-of-choreography-shoot-2014-amanda-vincelli-ramona-lisa.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Behind the scenes shooting dance archive</div>
+                <div class="accordion__cell accordion__photographer">Zev Rector</div>
+                <div class="accordion__cell accordion__source">Private Collection</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/behind-the-scenes-shooting-dance-archive-1-2014-zev-rector-private-collection.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Behind the scenes shooting dance archive</div>
+                <div class="accordion__cell accordion__photographer">Zev Rector</div>
+                <div class="accordion__cell accordion__source">Private Collection</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/behind-the-scenes-shooting-dance-archive-2-2014-zev-rector-private-collection.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Behind the scenes shooting dance archive</div>
+                <div class="accordion__cell accordion__photographer">Zev Rector</div>
+                <div class="accordion__cell accordion__source">Private Collection</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/behind-the-scenes-shooting-dance-archive-3-2014-zev-rector-private-collection.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Behind The Scenes with performer Holland Brown</div>
+                <div class="accordion__cell accordion__photographer">Amanda Vincelli</div>
+                <div class="accordion__cell accordion__source">Private Collection</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/behind-the-scenes-with-performer-holland-brown-2014-amanda-vincelli-private-collection.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Choreography notes</div>
+                <div class="accordion__cell accordion__photographer">Ramona Lisa</div>
+                <div class="accordion__cell accordion__source">Private Collection</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/choreography-notes-2014-ramona-lisa-private-collection.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Fitting Stage Costumes by Valentina Kova</div>
+                <div class="accordion__cell accordion__photographer">Joshua Johnson</div>
+                <div class="accordion__cell accordion__source">Atelier Valentina Kova</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/fitting-stage-costumes-by-valentina-kova-1-2014-joshua-johnson-atelier-valentina-kova.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Fitting Stage Costumes by Valentina Kova</div>
+                <div class="accordion__cell accordion__photographer">Joshua Johnson</div>
+                <div class="accordion__cell accordion__source">Atelier Valentina Kova</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/fitting-stage-costumes-by-valentina-kova-2-2014-joshua-johnson-atelier-valentina-kova.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Fitting Stage Costumes by Valentina Kova</div>
+                <div class="accordion__cell accordion__photographer">Joshua Johnson</div>
+                <div class="accordion__cell accordion__source">Atelier Valentina Kova</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/fitting-stage-costumes-by-valentina-kova-3-2014-joshua-johnson-atelier-valentina-kova.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Makeup test</div>
+                <div class="accordion__cell accordion__photographer">Ramona Lisa</div>
+                <div class="accordion__cell accordion__source">Private Collection</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/makeup-test-2014-ramona-lisa-private-collection.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa</div>
+                <div class="accordion__cell accordion__photographer">Holland Brown</div>
+                <div class="accordion__cell accordion__source">Private Collection</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/ramona-lisa-2014-holland-brown-private-collection.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa</div>
+                <div class="accordion__cell accordion__photographer">Tim Barber</div>
+                <div class="accordion__cell accordion__source">Arcadia</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/ramona-lisa-1-2014-tim-barber-arcadia.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa</div>
+                <div class="accordion__cell accordion__photographer">Tim Barber</div>
+                <div class="accordion__cell accordion__source">Arcadia</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/ramona-lisa-2-2014-tim-barber-arcadia.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa</div>
+                <div class="accordion__cell accordion__photographer">Tim Barber</div>
+                <div class="accordion__cell accordion__source">Arcadia</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/ramona-lisa-3-2014-tim-barber-arcadia.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa</div>
+                <div class="accordion__cell accordion__photographer">Tim Barber</div>
+                <div class="accordion__cell accordion__source">Arcadia</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/ramona-lisa-4-2014-tim-barber-arcadia.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa</div>
+                <div class="accordion__cell accordion__photographer">Tim Barber</div>
+                <div class="accordion__cell accordion__source">Arcadia</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/ramona-lisa-5-2014-tim-barber-arcadia.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa</div>
+                <div class="accordion__cell accordion__photographer">Tim Barber</div>
+                <div class="accordion__cell accordion__source">Arcadia</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/ramona-lisa-6-2014-tim-barber-arcadia.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa</div>
+                <div class="accordion__cell accordion__photographer">Amanda Vincelli</div>
+                <div class="accordion__cell accordion__source">The WILD Magazine</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa</div>
+                <div class="accordion__cell accordion__photographer">Chad Moore</div>
+                <div class="accordion__cell accordion__source">BEAT Magazine UK</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/ramona-lisa-1-2014-chad-moore-beat-magazine-uk.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa</div>
+                <div class="accordion__cell accordion__photographer">Chad Moore</div>
+                <div class="accordion__cell accordion__source">BEAT Magazine UK</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/ramona-lisa-2-2014-chad-moore-beat-magazine-uk.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa</div>
+                <div class="accordion__cell accordion__photographer">Dustin Aksland</div>
+                <div class="accordion__cell accordion__source">SPEX Magazine Germany</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/ramona-lisa-2014-dustin-aksland-spex-magazine-germany.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa</div>
+                <div class="accordion__cell accordion__photographer">Guy Eppel</div>
+                <div class="accordion__cell accordion__source">Noisey</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/ramona-lisa-2014-guy-eppel-noisey.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Record Release Show Flyer</div>
+                <div class="accordion__cell accordion__photographer">Tim Barber</div>
+                <div class="accordion__cell accordion__source">Terrible Records</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/record-release-show-flyer-2014-tim-barber-terrible-records.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Rehearsals with dance coach Juri Onuki</div>
+                <div class="accordion__cell accordion__photographer">Ramona Lisa</div>
+                <div class="accordion__cell accordion__source">Private Collection</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/rehearsals-with-dance-coach-juri-onuki-2014-ramona-lisa-private-collection.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Storyboard Drawings for &quot;Dominic&quot; Video</div>
+                <div class="accordion__cell accordion__photographer">Ramona Lisa</div>
+                <div class="accordion__cell accordion__source">Private Collection</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/storyboard-drawings-for-dominic-video-2014-ramona-lisa-private-collection.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Tour poster</div>
+                <div class="accordion__cell accordion__photographer">Amanda Vincelli</div>
+                <div class="accordion__cell accordion__source">Terrible Records</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/tour-poster-2014-amanda-vincelli-terrible-records.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">View While Recording. Villa Medici, Rome</div>
+                <div class="accordion__cell accordion__photographer">Ramona Lisa</div>
+                <div class="accordion__cell accordion__source">Private Collection</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/view-while-recording-villa-medici-rome-2014-ramona-lisa-private-collection.jpg" class="viewer"></div>
+              </div>
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__year">2014</div>
+                <div class="accordion__cell accordion__title">Work Desk. Villa Medici, Rome</div>
+                <div class="accordion__cell accordion__photographer">Ramona Lisa</div>
+                <div class="accordion__cell accordion__source">Private Collection</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/photos/work-desk-villa-medici-rome-2014-ramona-lisa-private-collection.jpg" class="viewer"></div>
+              </div>
             </div>
-          </script>
+          </div>
         </div>
       </section>
       <section id="dance" class="section section--dance">
@@ -205,24 +478,293 @@
         <div class="section__container">
           <div class="section__title">LIVE ARCHIVE</div>
           <div class="section__body">
-            <div id="performances"></div>
-          </div>
-          <script id="performance-template" type="text/x-handlebars-template">
-            <div class="accordion__table">{{#each this}}
-              <div class="accordion__row accordion__click">{{#if date}}
-                <div class="accordion__cell accordion__date">{{date}}</div>{{/if}}
-                {{#if title}}
-                <div class="accordion__cell accordion__title">{{title}}</div>{{/if}}
-                {{#if photographer}}
-                <div class="accordion__cell accordion__photographer">{{photographer}}</div>{{/if}}
-                {{#if place}}
-                <div class="accordion__cell accordion__source">{{place}}</div>{{/if}}
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">10.13.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio, Final Show</div>
+                <div class="accordion__cell accordion__photographer">Phil Chang</div>
+                <div class="accordion__cell accordion__source">Le Poisson Rouge, NYC</div>
               </div>
               <div class="accordion__row accordion__target">
-                <div class="accordion__cell accordion__media"><img src="images/performance/{{file}}"></div>
-              </div>{{/each}}
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-final-show-1-le-poisson-rouge-nyc-10-13-14-phil-chang.jpg" class="viewer"></div>
+              </div>
             </div>
-          </script>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">10.13.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio, Final Show</div>
+                <div class="accordion__cell accordion__photographer">Phil Chang</div>
+                <div class="accordion__cell accordion__source">Le Poisson Rouge, NYC</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-final-show-2-le-poisson-rouge-nyc-10-13-14-phil-chang.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">10.13.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio, Final Show</div>
+                <div class="accordion__cell accordion__photographer">Phil Chang</div>
+                <div class="accordion__cell accordion__source">Le Poisson Rouge, NYC</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-final-show-3-le-poisson-rouge-nyc-10-13-14-phil-chang.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">10.13.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio, Final Show</div>
+                <div class="accordion__cell accordion__photographer">Phil Chang</div>
+                <div class="accordion__cell accordion__source">Le Poisson Rouge, NYC</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-final-show-4-le-poisson-rouge-nyc-10-13-14-phil-chang.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">10.13.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio, Final Show</div>
+                <div class="accordion__cell accordion__photographer">Phil Chang</div>
+                <div class="accordion__cell accordion__source">Le Poisson Rouge, NYC</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-final-show-5-le-poisson-rouge-nyc-10-13-14-phil-chang.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">9.15.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio and Jay Israelson</div>
+                <div class="accordion__cell accordion__photographer">Josh Language</div>
+                <div class="accordion__cell accordion__source">Wythe Hotel</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-and-jay-israelson-wythe-hotel-9-15-14-josh-language.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">8.22.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio</div>
+                <div class="accordion__cell accordion__photographer"></div>
+                <div class="accordion__cell accordion__source">Los Globos, Los Angeles</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-los-globos-los-angeles-8-22-14-.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">7.5.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio</div>
+                <div class="accordion__cell accordion__photographer">Charles Roussel</div>
+                <div class="accordion__cell accordion__source">MoMA PS1, NYC</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-mo-ma-ps-1-nyc-7-5-14-charles-roussel.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">7.5.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio</div>
+                <div class="accordion__cell accordion__photographer">Brooklyn Vegan</div>
+                <div class="accordion__cell accordion__source">MoMA PS1, NYC</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-1-mo-ma-ps-1-nyc-7-5-14-brooklyn-vegan.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">7.5.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio</div>
+                <div class="accordion__cell accordion__photographer">Brooklyn Vegan</div>
+                <div class="accordion__cell accordion__source">MoMA PS1, NYC</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-2-mo-ma-ps-1-nyc-7-5-14-brooklyn-vegan.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">6.19.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio</div>
+                <div class="accordion__cell accordion__photographer">Arte</div>
+                <div class="accordion__cell accordion__source">Villa Aperta Festival, Rome</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-1-villa-aperta-festival-rome-6-19-14-arte.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">6.19.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio</div>
+                <div class="accordion__cell accordion__photographer">Arte</div>
+                <div class="accordion__cell accordion__source">Villa Aperta Festival, Rome</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-2-villa-aperta-festival-rome-6-19-14-arte.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">6.18.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio</div>
+                <div class="accordion__cell accordion__photographer">Monsieur Tambour</div>
+                <div class="accordion__cell accordion__source">Le Carmen, Paris</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-le-carmen-paris-6-18-14-monsieur-tambour.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">6.17.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio</div>
+                <div class="accordion__cell accordion__photographer">Christina Sancu</div>
+                <div class="accordion__cell accordion__source">Courtyard Theatre, London</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-1-courtyard-theatre-london-6-17-14-christina-sancu.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">6.17.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio</div>
+                <div class="accordion__cell accordion__photographer">Christina Sancu</div>
+                <div class="accordion__cell accordion__source">Courtyard Theatre, London</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-christina-sancu-6-17-14-.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">6.17.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio</div>
+                <div class="accordion__cell accordion__photographer">Jian Wu</div>
+                <div class="accordion__cell accordion__source">Courtyard Theatre, London</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-1-courtyard-theatre-london-6-17-14-jian-wu.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">4.28.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio, Arcadia Release</div>
+                <div class="accordion__cell accordion__photographer">Ethan Wells</div>
+                <div class="accordion__cell accordion__source">Babys All Right, NYC</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-arcadia-release-babys-all-right-nyc-4-28-14-ethan-wells.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">4.28.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa Trio, Arcadia Release</div>
+                <div class="accordion__cell accordion__photographer">Leslie Hamilton</div>
+                <div class="accordion__cell accordion__source">Babys All Right, NYC</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-trio-arcadia-release-babys-all-right-nyc-4-28-14-leslie-hamilton.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">12.18.13</div>
+                <div class="accordion__cell accordion__title">Theora Vorbis</div>
+                <div class="accordion__cell accordion__photographer"></div>
+                <div class="accordion__cell accordion__source">Babys All Right, NYC</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/theora-vorbis-babys-all-right-nyc-12-18-13-.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">10.19.13</div>
+                <div class="accordion__cell accordion__title">Agatha Dimm</div>
+                <div class="accordion__cell accordion__photographer"></div>
+                <div class="accordion__cell accordion__source">Shea Stadium, Brooklyn</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/agatha-dimm-1-shea-stadium-brooklyn-10-19-13-.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">10.19.13</div>
+                <div class="accordion__cell accordion__title">Agatha Dimm</div>
+                <div class="accordion__cell accordion__photographer"></div>
+                <div class="accordion__cell accordion__source">Shea Stadium, Brooklyn</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/agatha-dimm-2-shea-stadium-brooklyn-10-19-13-.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">6.13.13</div>
+                <div class="accordion__cell accordion__title">Kimsin Kreft</div>
+                <div class="accordion__cell accordion__photographer"></div>
+                <div class="accordion__cell accordion__source">Clocktower, NYC</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/kimsin-kreft-1-clocktower-nyc-6-13-13-.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">6.13.13</div>
+                <div class="accordion__cell accordion__title">Kimsin Kreft</div>
+                <div class="accordion__cell accordion__photographer"></div>
+                <div class="accordion__cell accordion__source">Clocktower, NYC</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/kimsin-kreft-2-clocktower-nyc-6-13-13-.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">5.4.13</div>
+                <div class="accordion__cell accordion__title">Kimsin Kreft</div>
+                <div class="accordion__cell accordion__photographer"></div>
+                <div class="accordion__cell accordion__source">Le Poisson Rouge, NYC</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/kimsin-kreft-le-poisson-rouge-nyc-5-4-13-.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">4.13.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa</div>
+                <div class="accordion__cell accordion__photographer">Swords-Smith</div>
+                <div class="accordion__cell accordion__source">Swords-Smith, NYC</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-2-swords-smith-nyc-4-13-14-swords-smith.jpg" class="viewer"></div>
+              </div>
+            </div>
+            <div class="accordion__table">
+              <div class="accordion__row accordion__click">
+                <div class="accordion__cell accordion__date">4.11.14</div>
+                <div class="accordion__cell accordion__title">Ramona Lisa</div>
+                <div class="accordion__cell accordion__photographer">Vogue.com</div>
+                <div class="accordion__cell accordion__source">Private Performance, Palm Springs CA</div>
+              </div>
+              <div class="accordion__row accordion__target">
+                <div class="accordion__cell accordion__media"><img data-src="images/performance/ramona-lisa-1-private-performance-palm-springs-ca-4-11-14-vogue-com.jpg" class="viewer"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>

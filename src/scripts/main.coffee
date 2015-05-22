@@ -1,33 +1,14 @@
 window.$ = window.jQuery = require "../bower_components/jquery/dist/jquery.min"
 
 [
-  _
-
-  Handlebars
-
-  Photos
-  Performance
-
   Velocity
   ResponsiveSlides
 ] = [
-  require "../bower_components/lodash/lodash.min"
-
-  require 'Handlebars'
-
-  require './photos'
-  require './performance'
-
   require "../bower_components/velocity/velocity.min"
   require "../bower_components/jquery.responsive-slides/jquery.responsive-slides.min"
 ]
 
-log = ->
-  log.history = log.history || []
-  log.history.push arguments
-  if @console
-    css = 'background: #222; color: #bada55; padding: 2px'
-    console.log '%c Ramona Lisa ', css , Array.prototype.slice.call arguments
+log = -> return false
 
 class RamonaLisa
 
@@ -64,39 +45,43 @@ class RamonaLisa
     id = $overlayClick.attr('data-video')
     src = "//www.youtube.com/embed/#{id}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0"
 
-
     $overlayView.attr('src', src).load =>
       @$body.addClass 'overlay'
       $overlayContainer.addClass 'open'
-
 
   hideOverlay: (e) ->
     log 'hideOverlay'
     @$overlayContainers.removeClass('open')
     @$body.removeClass 'overlay'
 
-  setupLazyLoad: ->
-    log 'setupLazyLoad'
-
   setupAccordions: ->
     log 'setupAccordions'
     $('.accordion__click').click ->
-      $el = $(@)
-      $next = $(@).next(".accordion__target")
+      $el = $(@).addClass 'clicked'
+      $next = $el.next(".accordion__target")
+      $viewer = $next.find('.viewer')
 
       if $next.css('display') is 'block'
-        $next.find('.viewer').attr('src', '');
-        $next.velocity 'slideUp'
+        $el.removeClass 'clicked'
+        $next.velocity 'slideUp',
+          complete: -> $el.velocity('stop').velocity 'scroll'
         return
 
-      $next.velocity 'slideDown',
-        complete: ->
-          $(@).find('.viewer').attr('src', $next.find('.viewer').attr('data-src'));
-          $el.velocity('stop').velocity 'scroll'
 
-      $next.siblings('.accordion__target:visible').velocity 'slideUp',
-        complete: ->
-          $(@).find('.viewer').attr('src', '');
+
+      unless $viewer.attr('src')
+        $viewer
+          .attr('src', $next.find('.viewer').attr('data-src'))
+          .load ->
+            $next.velocity 'slideDown',
+              complete: -> $el.velocity('stop').velocity 'scroll'
+      else
+        $next.velocity 'slideDown',
+          complete: ->
+            $el.velocity('stop').velocity 'scroll'
+
+      $next.siblings('.accordion__target:visible').velocity 'slideUp'
+      $el.siblings('.clicked').removeClass 'clicked'
 
   cacheJQuery: ->
     log 'cacheJQuery'
@@ -113,26 +98,14 @@ class RamonaLisa
     @$overlayClose = @$overlayBackground.find '.overlay__close'
     @$overlayClick = $ '.overlay__click'
 
-    @$template = $("#entry-template")
-
     @$pages = $(".section__pages")
-
-  setupTemplates: ->
-    template =
-      photo: Handlebars.compile $("#photo-template").html()
-      performance: Handlebars.compile $("#performance-template").html()
-
-    $("#photos").append         template.photo(Photos)
-    $("#performances").append   template.performance(Performance)
 
   init: ->
     log 'init'
 
     @cacheJQuery()
-    @setupLazyLoad()
     @setupNavigation()
     @setupOverlays()
-    @setupTemplates()
     @setupAccordions()
 
     @$pages.responsiveSlides

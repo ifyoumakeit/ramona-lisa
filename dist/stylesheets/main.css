@@ -501,7 +501,7 @@ p {
   border: 1px #11546e solid;
   border-left-width: 0;
 }
-/* line 55, ../../src/stylesheets/partials/_nav.scss */
+/* line 53, ../../src/stylesheets/partials/_nav.scss */
 .navigation__link:after {
   background: #ffffff;
   z-index: -1;
@@ -516,12 +516,12 @@ p {
   transition: right 0.3s ease-in-out;
   bottom: -1px;
 }
-/* line 73, ../../src/stylesheets/partials/_nav.scss */
+/* line 71, ../../src/stylesheets/partials/_nav.scss */
 .navigation__link:hover:after {
   right: -17px;
 }
 
-/* line 79, ../../src/stylesheets/partials/_nav.scss */
+/* line 77, ../../src/stylesheets/partials/_nav.scss */
 .navigation__toggle {
   cursor: pointer;
   z-index: 99;
@@ -532,7 +532,7 @@ p {
   width: 1em;
   height: 1em;
 }
-/* line 89, ../../src/stylesheets/partials/_nav.scss */
+/* line 87, ../../src/stylesheets/partials/_nav.scss */
 .navigation__toggle:before {
   content: "";
   position: absolute;
@@ -543,7 +543,7 @@ p {
   background: white;
   box-shadow: 0 0.25em 0 0 white, 0 0.5em 0 0 white;
 }
-/* line 102, ../../src/stylesheets/partials/_nav.scss */
+/* line 100, ../../src/stylesheets/partials/_nav.scss */
 .navigation__toggle:after {
   content: "";
   position: absolute;
@@ -556,7 +556,7 @@ p {
   border-radius: 50%;
 }
 @media only screen and (min-width: 600px) {
-  /* line 79, ../../src/stylesheets/partials/_nav.scss */
+  /* line 77, ../../src/stylesheets/partials/_nav.scss */
   .navigation__toggle {
     display: none;
   }
@@ -671,6 +671,83 @@ body.overlay .overlay__background {
   height: calc(100% - 5px);
 }
 
+/*=================================
+=            ACCORDION            =
+=================================*/
+/* line 5, ../../src/stylesheets/partials/_accordion.scss */
+.accordion__table {
+  width: 100%;
+}
+
+/* line 9, ../../src/stylesheets/partials/_accordion.scss */
+.accordion__row {
+  position: relative;
+  padding: 10px;
+  border-bottom: 1px #d2ddd6 solid;
+  cursor: pointer;
+}
+/* line 15, ../../src/stylesheets/partials/_accordion.scss */
+.accordion__row:nth-last-child(2) {
+  border: 0;
+}
+
+/* line 20, ../../src/stylesheets/partials/_accordion.scss */
+.accordion__target {
+  display: none;
+}
+
+/* line 26, ../../src/stylesheets/partials/_accordion.scss */
+.accordion__click::after {
+  content: '\25be';
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 2px);
+  -webkit-transform: translateY(-50%) rotate(0deg);
+  transform: translateY(-50%) rotate(0deg);
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+}
+/* line 36, ../../src/stylesheets/partials/_accordion.scss */
+.accordion__click.clicked::after {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* line 41, ../../src/stylesheets/partials/_accordion.scss */
+.accordion__cell {
+  font-size: 16px;
+  line-height: 1.4;
+  display: block;
+}
+@media only screen and (min-width: 800px) {
+  /* line 41, ../../src/stylesheets/partials/_accordion.scss */
+  .accordion__cell {
+    width: 20%;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  /* line 53, ../../src/stylesheets/partials/_accordion.scss */
+  .accordion__cell:first-child {
+    width: 65px;
+  }
+  /* line 57, ../../src/stylesheets/partials/_accordion.scss */
+  .accordion__cell:nth-child(2) {
+    width: 400px;
+  }
+  /* line 61, ../../src/stylesheets/partials/_accordion.scss */
+  .accordion__cell:only-child {
+    width: 100%;
+  }
+}
+
+/* line 68, ../../src/stylesheets/partials/_accordion.scss */
+.accordion__title {
+  font-weight: bold;
+}
+
 /* line 1, ../../src/stylesheets/partials/_section.scss */
 .section {
   width: 100%;
@@ -780,74 +857,6 @@ body.overlay .overlay__background {
 .-boxed:hover {
   background: #d2ddd6;
   border-color: #11546e;
-}
-
-/*=================================
-=            ACCORDION            =
-=================================*/
-/* line 112, ../../src/stylesheets/partials/_section.scss */
-.accordion__table {
-  width: 100%;
-}
-
-/* line 116, ../../src/stylesheets/partials/_section.scss */
-.accordion__row {
-  position: relative;
-  padding: 10px;
-  border-bottom: 1px #d2ddd6 solid;
-  cursor: pointer;
-}
-/* line 122, ../../src/stylesheets/partials/_section.scss */
-.accordion__row:nth-last-child(2) {
-  border: 0;
-}
-/* line 126, ../../src/stylesheets/partials/_section.scss */
-.accordion__row.accordion__target {
-  display: none;
-}
-/* line 130, ../../src/stylesheets/partials/_section.scss */
-.accordion__row::after {
-  content: '\25be';
-  display: block;
-  position: absolute;
-  right: 10px;
-  top: calc(50% - 2px);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-/* line 141, ../../src/stylesheets/partials/_section.scss */
-.accordion__cell {
-  font-size: 16px;
-  line-height: 1.4;
-  display: block;
-}
-@media only screen and (min-width: 800px) {
-  /* line 141, ../../src/stylesheets/partials/_section.scss */
-  .accordion__cell {
-    width: calc(33% - 30px);
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  /* line 153, ../../src/stylesheets/partials/_section.scss */
-  .accordion__cell:first-child {
-    width: 65px;
-  }
-  /* line 157, ../../src/stylesheets/partials/_section.scss */
-  .accordion__cell:nth-child(2) {
-    width: 300px;
-  }
-  /* line 161, ../../src/stylesheets/partials/_section.scss */
-  .accordion__cell:only-child {
-    width: 100%;
-  }
-}
-
-/* line 168, ../../src/stylesheets/partials/_section.scss */
-.accordion__title {
-  font-weight: bold;
 }
 
 /* line 1, ../../src/stylesheets/partials/_section-home.scss */
