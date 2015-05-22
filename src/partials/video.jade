@@ -2,7 +2,7 @@
 .section__body
   .overlay__container
     .overlay__viewer
-      iframe.overlay__view(src='')
+      iframe.overlay__view(src='', style="visibility:hidden", onload="this.style.visibility = 'visible'" )
   .videos
     .video.overlay__click(data-video='eghzhlbv6Cc')
       img.video__image.-boxed(

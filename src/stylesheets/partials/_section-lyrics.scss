@@ -37,17 +37,23 @@
   position: relative;
   max-width: 800px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .section__pages_nav {
   font-size: $fontSize-large * 2;
   text-decoration: none;
-  position: absolute;
   z-index: 10;
   cursor: pointer;
-  top: 50%;
-  left: -35px;
-  transform: translateY(-50%);
+  margin: 24px;
+
+  @include grid-media-query('m'){
+    top: 50%;
+    left: -35px;
+    transform: translateY(-50%);
+    position: absolute;
+    margin: 0;
+  }
 
   &.next {
     right: -35px;

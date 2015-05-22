@@ -28,7 +28,7 @@ class RamonaLisa
 
   toggleNav: ->
     log 'toggleNav'
-    @$nav.toggleClass 'closed'
+    @$nav.toggleClass 'open'
 
   setupOverlays: ->
     log 'setupOverlays'
@@ -43,14 +43,16 @@ class RamonaLisa
     $overlayView        = $overlayContainer.find('.overlay__view')
 
     id = $overlayClick.attr('data-video')
-    src = "//www.youtube.com/embed/#{id}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0"
+    src = "//www.youtube.com/embed/#{id}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1"
 
-    $overlayView.attr('src', src).load =>
-      @$body.addClass 'overlay'
-      $overlayContainer.addClass 'open'
+    $overlayView.attr('src', src)
+    @$body.addClass 'overlay'
+    $overlayContainer.addClass 'open'
+
 
   hideOverlay: (e) ->
-    log 'hideOverlay'
+    $('iframe').attr('src', '')
+
     @$overlayContainers.removeClass('open')
     @$body.removeClass 'overlay'
 
@@ -63,23 +65,11 @@ class RamonaLisa
 
       if $next.css('display') is 'block'
         $el.removeClass 'clicked'
-        $next.velocity 'slideUp',
-          complete: -> $el.velocity('stop').velocity 'scroll'
+        $next.velocity 'slideUp'
         return
 
-
-
-      unless $viewer.attr('src')
-        $viewer
-          .attr('src', $next.find('.viewer').attr('data-src'))
-          .load ->
-            $next.velocity 'slideDown',
-              complete: -> $el.velocity('stop').velocity 'scroll'
-      else
-        $next.velocity 'slideDown',
-          complete: ->
-            $el.velocity('stop').velocity 'scroll'
-
+      $next.velocity 'slideDown'
+      console.log $next, $next.siblings('.accordion__target:visible')
       $next.siblings('.accordion__target:visible').velocity 'slideUp'
       $el.siblings('.clicked').removeClass 'clicked'
 

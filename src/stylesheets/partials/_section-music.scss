@@ -24,19 +24,6 @@
   line-height: 1;
   margin-bottom: 5px;
   position: relative;
-  background: $color-primary;
-  color: $color-bg;
-
-  &:after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    z-index: 1;
-    height: 6px;
-    width: 1px;
-    border-left: 1px $color-primary solid;
-    bottom: -6px;
-  }
 }
 
 .album__notes {

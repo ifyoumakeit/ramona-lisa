@@ -3,13 +3,14 @@
 .section__title LIVE ARCHIVE
 
 .section__body
-  each performance in performances
-    .accordion__table
+  .accordion__table
+    each performance in performances
       .accordion__row.accordion__click
-        .accordion__cell.accordion__date #{performance.date}
         .accordion__cell.accordion__title #{performance.title}
+        .accordion__cell.accordion__date #{performance.date}
         .accordion__cell.accordion__photographer #{performance.photographer}
         .accordion__cell.accordion__source #{performance.place}
       .accordion__row.accordion__target
         .accordion__cell.accordion__media
-          img.viewer(data-src='images/performance/#{performance.file}')
+          a(href='images/performance/#{performance.file}' target='_blank')
+            img.viewer(src='images/performance/#{performance.file}')

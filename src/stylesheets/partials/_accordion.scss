@@ -8,34 +8,18 @@
 
 .accordion__row {
   position: relative;
-  padding: 10px;
-  border-bottom: 1px $color-border solid;
   cursor: pointer;
 
-  &:nth-last-child(2) {
-    border: 0;
-  }
 }
 
 .accordion__target {
   display: none;
+  padding: 5px 5px 0;
 }
 
 .accordion__click {
-
-  &::after {
-    content: '\25be';
-    display: block;
-    position: absolute;
-    right: 10px;
-    top: calc(50% - 2px);
-    transform: translateY(-50%) rotate(0deg);
-    transition: transform 0.3s linear;
-  }
-
-  &.clicked::after {
-    transform: translateY(-50%) rotate(180deg);
-  }
+  border-top: 1px $color-border solid;
+  padding: 10px 10px 5px;
 }
 
 .accordion__cell {
@@ -51,11 +35,11 @@
     text-overflow: ellipsis;
 
     &:first-child {
-      width: 65px;
+      width: 400px;
     }
 
     &:nth-child(2) {
-      width: 400px;
+      width: 65px;
     }
 
     &:only-child {
@@ -63,8 +47,9 @@
     }
   }
 
-}
-
-.accordion__title {
-  font-weight: bold;
+  img {
+    max-width: 600px;
+    margin: 20px auto;
+    display: block;
+  }
 }
