@@ -49,7 +49,6 @@ class RamonaLisa
     @$body.addClass 'overlay'
     $overlayContainer.addClass 'open'
 
-
   hideOverlay: (e) ->
     $('iframe').attr('src', '')
 
@@ -65,12 +64,12 @@ class RamonaLisa
 
       if $next.css('display') is 'block'
         $el.removeClass 'clicked'
-        $next.velocity 'slideUp'
+        $next.velocity 'slideUp', mobileHA: false
         return
 
-      $next.velocity 'slideDown'
+      $next.velocity 'slideDown', mobileHA: false
       console.log $next, $next.siblings('.accordion__target:visible')
-      $next.siblings('.accordion__target:visible').velocity 'slideUp'
+      $next.siblings('.accordion__target:visible').velocity 'slideUp', mobileHA: false
       $el.siblings('.clicked').removeClass 'clicked'
 
   cacheJQuery: ->
