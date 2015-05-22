@@ -38,17 +38,19 @@ body.overlay {
 .overlay__container {
   position: fixed;
   z-index: 100;
-  top: 50%;
+  top: -99999px;
   left: 50%;
   width: 100%;
   max-width: 900px;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   pointer-events: none;
-  transform: translate(-50%, -50%);
+
 
   &.open {
+    top: 50%;
     opacity: 1;
+    transform: translate(-50%, -50%);
     pointer-events: all;
   }
 }
