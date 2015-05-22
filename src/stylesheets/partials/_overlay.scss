@@ -1,10 +1,6 @@
 body.overlay {
   overflow: hidden;
 
-  .overlay__click {
-    filter: blur(5px);
-  }
-
   .overlay__background {
     opacity: 1;
     pointer-events: auto;
@@ -23,18 +19,20 @@ body.overlay {
   pointer-events: none;
 
   opacity: 0;
-  transition: opacity 0.4s;
+  transition: opacity 0.3s ease-in-out;
 }
+
 
 .overlay__close {
   line-height: 1;
   cursor: pointer;
   position: absolute;
-  top: 0;
-  right: 5px;
+  top: -8px;
+  right: 2px;
   color: $color-primary;
-  padding: 10px;
-  font-size: 4rem;
+  padding: 5px;
+  font-size: $fontSize-large;
+  line-height: 1;
 }
 
 .overlay__container {
@@ -44,10 +42,15 @@ body.overlay {
   left: 50%;
   width: 100%;
   max-width: 900px;
-  transform: translate(-50%, -400%);
+  transform: translate(-50%, -52%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
 
   &.open {
-    transform: translate(-50%, -50%)
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    pointer-events: all;
   }
 }
 
@@ -60,9 +63,9 @@ body.overlay {
 }
 
 .overlay__view {
-  background: white;
-  border: 1px $color-primary solid;
-  padding: 5px;
+  background: black;
+  border: 5px white solid;
+  box-shadow: 0 0 1px $color-primary;
   position: absolute;
   top: 0px;
   left: 0px;

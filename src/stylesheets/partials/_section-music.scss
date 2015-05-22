@@ -5,7 +5,8 @@
 
 .album {
   @extend %grid__item;
-  @extend %m--one-quarter;
+  @extend %m--one-half;
+  @extend %l--one-quarter;
 
   margin-bottom: 10px;
   text-align: center;

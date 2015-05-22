@@ -1,4 +1,5 @@
 .section--home {
+  padding: 0;
 
   .section__container {
     text-align: center;
@@ -6,17 +7,13 @@
 }
 
 .home__title {
-  font-size: 3rem;
+  font-size: $fontSize-large;
   color: $color-primary;
   border: 1px $color-primary solid;
   display: inline-block;
   padding: 2px 5px;
   line-height: 1;
   letter-spacing: 1px;
-
-  @include grid-media-query('m'){
-    font-size: 6rem;
-  }
 }
 
 .home__bricks {

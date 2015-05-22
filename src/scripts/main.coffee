@@ -1,13 +1,26 @@
-window.jQuery = window.$ = require "../bower_components/jquery/dist/jquery.min"
-_ = require "../bower_components/underscore/underscore-min"
+window.$ = window.jQuery = require "../bower_components/jquery/dist/jquery.min"
 
-Tabletop =  require("../bower_components/tabletop/src/tabletop").Tabletop
-Handlebars = require 'Handlebars'
+[
+  _
 
-require "../bower_components/velocity/velocity.min"
-require "../bower_components/unveil/jquery.unveil.min"
-require "../bower_components/jquery.responsive-slides/jquery.responsive-slides.min"
+  Handlebars
 
+  Photos
+  Performance
+
+  Velocity
+  ResponsiveSlides
+] = [
+  require "../bower_components/lodash/lodash.min"
+
+  require 'Handlebars'
+
+  require './photos'
+  require './performance'
+
+  require "../bower_components/velocity/velocity.min"
+  require "../bower_components/jquery.responsive-slides/jquery.responsive-slides.min"
+]
 
 log = ->
   log.history = log.history || []
@@ -49,27 +62,27 @@ class RamonaLisa
     $overlayView        = $overlayContainer.find('.overlay__view')
 
     id = $overlayClick.attr('data-video')
-    src = "https://www.youtube.com/embed/#{id}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0"
+    src = "//www.youtube.com/embed/#{id}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0"
 
-    @$body.addClass 'overlay'
-    $overlayContainer.addClass 'open'
-    $overlayView.attr 'src', src
+
+    $overlayView.attr('src', src).load =>
+      @$body.addClass 'overlay'
+      $overlayContainer.addClass 'open'
+
 
   hideOverlay: (e) ->
     log 'hideOverlay'
     @$overlayContainers.removeClass('open')
-    @$overlayContainers.find('.overlay__view').attr('src','')
     @$body.removeClass 'overlay'
 
   setupLazyLoad: ->
     log 'setupLazyLoad'
-    $('img').unveil()
 
   setupAccordions: ->
     log 'setupAccordions'
-    $('.accordion__row').click ->
+    $('.accordion__click').click ->
       $el = $(@)
-      $next = $(@).next(".accordion__media")
+      $next = $(@).next(".accordion__target")
 
       if $next.css('display') is 'block'
         $next.find('.viewer').attr('src', '');
@@ -81,7 +94,7 @@ class RamonaLisa
           $(@).find('.viewer').attr('src', $next.find('.viewer').attr('data-src'));
           $el.velocity('stop').velocity 'scroll'
 
-      $next.siblings('.accordion__media:visible').velocity 'slideUp',
+      $next.siblings('.accordion__target:visible').velocity 'slideUp',
         complete: ->
           $(@).find('.viewer').attr('src', '');
 
@@ -89,6 +102,7 @@ class RamonaLisa
     log 'cacheJQuery'
     @$body   = $ 'body'
 
+    @$nav       = $ '.main'
     @$nav       = $ '.navigation'
     @$navToggle = $ '.navigation__toggle'
     @$navItems  = @$nav.find '.navigation__link'
@@ -103,39 +117,21 @@ class RamonaLisa
 
     @$pages = $(".section__pages")
 
-  setupHelpers: ->
-    log 'setupHelpers'
-    Handlebars.registerHelper 'media', (item) ->
-      log item
-      unless item?
-        return ''
-
-      if item.indexOf('.') > 0
-        url = 'http://googledrive.com/host/0Bx6GaEGEXpl8flY4Q3pWbEVsYW42YzAwMTh6UGF3ZGtjam5tNlFmdTc4NTlRM2kzRjFuZlk/'
-        output = "<img src='images/loader.jpg' class='viewer' data-src='#{url}#{item}' />"
-      else
-        url = "https://www.youtube.com/embed/#{item}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0"
-        output = "<div src='images/loader.jpg' class='video__holder'><iframe frameborder='0' class='viewer video__viewer' data-src='#{url}'></iframe></div>"
-
-      new Handlebars.SafeString output
-
   setupTemplates: ->
-    template = Handlebars.compile @$template.html()
+    template =
+      photo: Handlebars.compile $("#photo-template").html()
+      performance: Handlebars.compile $("#performance-template").html()
 
-    $("#photos").append         template(@data.Photos.elements)
-    $("#choreographies").append template(@data.Choreography.elements)
-    $("#performances").append   template(@data.Performance.elements)
+    $("#photos").append         template.photo(Photos)
+    $("#performances").append   template.performance(Performance)
 
-  init: (data, tabletop) ->
+  init: ->
     log 'init'
-    @data = data
-    @tabletop = tabletop
 
     @cacheJQuery()
     @setupLazyLoad()
     @setupNavigation()
     @setupOverlays()
-    @setupHelpers()
     @setupTemplates()
     @setupAccordions()
 
@@ -147,9 +143,5 @@ class RamonaLisa
       nextText: "&rsaquo;"
 
 $ ->
-  RamonaLisa = new RamonaLisa
-  Tabletop.init(
-    key: 'https://docs.google.com/spreadsheets/d/1R0SF7drKgJ1l-jlgzthPfhL9KCFkbjjgz2Gd9WMkQGY/pubhtml'
-    debug: true
-    callback: RamonaLisa.init.bind(RamonaLisa)
-  )
+  (new RamonaLisa).init()
+

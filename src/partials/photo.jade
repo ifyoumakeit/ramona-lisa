@@ -1,3 +1,24 @@
 .section__title Photos
 .section__body
   #photos
+
+script(id="photo-template" type="text/x-handlebars-template")
+  .accordion__table
+    {{#each this}}
+    .accordion__row.accordion__click
+      {{#if date}}
+      .accordion__cell.accordion__year {{date}}
+      {{/if}}
+      {{#if title}}
+      .accordion__cell.accordion__title {{title}}
+      {{/if}}
+      {{#if photographer}}
+      .accordion__cell.accordion__photographer {{photographer}}
+      {{/if}}
+      {{#if source}}
+      .accordion__cell.accordion__source {{source}}
+      {{/if}}
+    .accordion__row.accordion__target
+      .accordion__cell.accordion__media
+        img(src='images/photos/{{file}}')
+    {{/each}}

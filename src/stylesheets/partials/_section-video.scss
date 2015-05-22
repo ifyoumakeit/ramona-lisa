@@ -4,11 +4,11 @@
 
 .video {
   @extend %grid__item;
-  @extend %m--one-third;
-  margin-bottom: 10px;
+  @extend %l--one-third;
+  @extend %m--one-half;
+  margin-bottom: 30px;
   cursor: pointer;
 }
-
 
 .video__title {
   font-weight: bold;
@@ -20,9 +20,11 @@
 }
 
 .video__image {
+  display: block;
   padding: 5px;
   max-width: 100%;
   height: auto;
+  margin-bottom: 10px;
 }
 
 .video__holder {
