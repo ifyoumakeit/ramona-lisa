@@ -27,6 +27,7 @@ gulp.task('compass', function() {
         browsers: ['last 2 versions'],
         cascade: false
     }))
+    .pipe($.minifyCss())
     .pipe(gulp.dest('dist/stylesheets'));
 });
 

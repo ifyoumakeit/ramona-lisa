@@ -1,9 +1,3 @@
-$images: 14;
-$width: 100%;
-
-$total: $width * ($images + 1);
-
-
 .section__pages {
   position: relative;
   list-style: none;
@@ -41,6 +35,8 @@ $total: $width * ($images + 1);
 
 .section__scroll {
   position: relative;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .section__pages_nav {
