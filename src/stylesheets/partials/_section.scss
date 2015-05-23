@@ -5,27 +5,9 @@
   overflow: hidden;
   min-height: 100vh;
   padding: 120px 12px;
-  transition: min-height 0.5s;
 
   @include grid-media-query('m'){
     padding: 120px 72px;
-  }
-
-
-  &:after {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    top: -$blur-width;
-    right: -$blur-width;
-    bottom: -$blur-width;
-    left: -$blur-width;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    filter: blur($blur-width);
   }
 
   &:before {

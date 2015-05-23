@@ -2,18 +2,7 @@
   box-sizing: border-box;
 }
 
-
-body {
-  margin: 0;
-  background: $color-bg;
-  padding: 0 5px;
-  color: $color-text;
-  font-family: 'Open Sans', sans-serif;
-  font-size: $fontSize-medium;
-  line-height: $lineHeight-medium;
-
-  position: relative;
-
+html {
   &::after {
     position: fixed;
     content: '';
@@ -25,6 +14,27 @@ body {
     left: 0;
     pointer-events: none;
     z-index: 11;
+  }
+}
+
+
+body {
+  margin: 0;
+  background: $color-bg;
+  padding: 0 5px;
+  color: $color-text;
+  font-family: 'Open Sans', sans-serif;
+  font-size: $fontSize-medium;
+  line-height: $lineHeight-medium;
+
+  position: relative;
+}
+
+main {
+  transition: transform $transition;
+
+  &.open {
+    transform: translateX(125px)
   }
 
 }

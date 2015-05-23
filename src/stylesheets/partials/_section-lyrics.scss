@@ -41,6 +41,8 @@
 }
 
 .section__pages_nav {
+  display: inline-block;
+  line-height: 1;
   font-size: $fontSize-large * 2;
   text-decoration: none;
   z-index: 10;

@@ -1,8 +1,10 @@
 window.$ = window.jQuery = require "../bower_components/jquery/dist/jquery.min"
 
 [
+  Velocity
   ResponsiveSlides
 ] = [
+  require "../bower_components/velocity/velocity.min"
   require "../bower_components/jquery.responsive-slides/jquery.responsive-slides.min"
 ]
 
@@ -23,14 +25,17 @@ class RamonaLisa
     log 'handleNavClick'
     e.preventDefault()
     id = $(e.currentTarget).attr('href')
+    @$nav.removeClass 'open'
+    @$main.removeClass 'open'
     $(id).velocity 'scroll',
-      duration: 750,
+      delay: 600,
+      duration: 600,
       easing: 'ease-in-out'
-      complete: @toggleNav.bind(@)
 
   toggleNav: ->
     log 'toggleNav'
     @$nav.toggleClass 'open'
+    @$main.toggleClass 'open'
 
   setupOverlays: ->
     log 'setupOverlays'
@@ -73,12 +78,14 @@ class RamonaLisa
   cacheJQuery: ->
     log 'cacheJQuery'
     @$body   = $ 'body'
+    @$main   = $ 'main'
 
     @$nav       = $ '.main'
     @$nav       = $ '.navigation'
     @$navToggle = $ '.navigation__toggle'
     @$navItems  = @$nav.find '.navigation__link'
     @$sections  = $ '.section'
+
 
     @$overlayBackground = $ '.overlay__background'
     @$overlayContainers   = $ '.overlay__container'

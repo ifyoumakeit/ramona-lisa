@@ -15,16 +15,3 @@
   line-height: 1;
   letter-spacing: 1px;
 }
-
-.home__bricks {
-    background:
-      linear-gradient(135deg, transparent 22px, $color-overlay 22px, $color-overlay 24px, transparent 24px, transparent 67px, $color-overlay 67px, $color-overlay 69px, transparent 69px),
-      linear-gradient(225deg, transparent 22px, $color-overlay 22px, $color-overlay 24px, transparent 24px, transparent 67px, $color-overlay 67px, $color-overlay 69px, transparent 69px)0 64px;
-    background-size: 64px 128px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-}

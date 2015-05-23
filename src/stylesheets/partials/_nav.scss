@@ -8,8 +8,8 @@
   bottom: 0;
   padding-top: 10px;
 
-  transform: translateX(-120%);
-  transition: transform 0.5s;
+  transform: translateX(-125px);
+  transition: transform $transition;
 
   backface-visibility: hidden;
 
