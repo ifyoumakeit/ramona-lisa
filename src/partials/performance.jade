@@ -12,5 +12,5 @@
         .accordion__cell.accordion__source #{performance.place}
       .accordion__row.accordion__target
         .accordion__cell.accordion__media
-          a(href='images/performance/#{performance.file}' target='_blank')
+          a.overlay__click(href='images/performance/#{performance.file}'  target='_blank')
             img.viewer(src='images/performance/#{performance.file}')

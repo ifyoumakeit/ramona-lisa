@@ -10,6 +10,7 @@ body.overlay {
 
 .overlay__background {
   position: fixed;
+  overflow: scroll;
   top: 0;
   right: 0;
   bottom: 0;
@@ -26,7 +27,7 @@ body.overlay {
 .overlay__close {
   line-height: 1;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   top: -8px;
   right: 2px;
   color: $color-primary;
@@ -36,7 +37,7 @@ body.overlay {
 }
 
 .overlay__container {
-  position: fixed;
+  position: absolute;
   z-index: 100;
   top: -99999px;
   left: 50%;
@@ -46,12 +47,16 @@ body.overlay {
   transition: opacity 0.3s ease-in-out;
   pointer-events: none;
 
-
   &.open {
     top: 50%;
     opacity: 1;
     transform: translate(-50%, -50%);
     pointer-events: all;
+
+    &.-photo {
+      top: 48px;
+      transform: translate(-50%,0);
+    }
   }
 }
 
@@ -61,9 +66,39 @@ body.overlay {
   height: 0;
   padding-bottom: 57%;
   margin-bottom: 5px;
+
+  .overlay__img {
+    display: none;
+  }
+
+  &.-photo {
+
+    height: 100%;
+    padding: 24px;
+
+    .overlay__img {
+      display: block;
+    }
+
+    .overlay__iframe {
+      display: none;
+    }
+  }
 }
 
-.overlay__view {
+.overlay__img {
+  display: block;
+  border: 5px white solid;
+  box-shadow: 0 0 0 1px $color-primary;
+  margin: 24px auto;
+  max-height: 800px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+
+.overlay__iframe {
   border: 5px white solid;
   box-shadow: 0 0 0 1px $color-primary;
   position: absolute;

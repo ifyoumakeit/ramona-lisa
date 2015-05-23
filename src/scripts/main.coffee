@@ -45,21 +45,30 @@ class RamonaLisa
 
   showOverlay: (e) ->
     log 'showOverlay'
-    $overlayClick       = $(e.currentTarget)
-    $overlayContainer   = $overlayClick.closest('.section').find('.overlay__container')
-    $overlayView        = $overlayContainer.find('.overlay__view')
 
-    id = $overlayClick.attr('data-video')
-    src = "//www.youtube.com/embed/#{id}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1"
+    $el = $(e.currentTarget)
+    @$overlayViewer.removeClass '-photo'
+    @$overlayContainer.removeClass '-photo'
 
-    $overlayView.attr('src', src)
+    if $el.attr('data-video')
+      id = $el.attr('data-video')
+      src = "//www.youtube.com/embed/#{id}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1"
+      @$overlayIframe.attr('src', src)
+    else
+      src = $el.attr('href')
+      @$overlayViewer.addClass '-photo'
+      @$overlayContainer.addClass '-photo'
+      @$overlayImage.attr('src', src)
+
     @$body.addClass 'overlay'
-    $overlayContainer.addClass 'open'
+    @$overlayContainer.addClass 'open'
+
+    return false
 
   hideOverlay: (e) ->
     $('iframe').attr('src', '')
 
-    @$overlayContainers.removeClass('open')
+    @$overlayContainer.removeClass('open')
     @$body.removeClass 'overlay'
 
   setupAccordions: ->
@@ -88,8 +97,13 @@ class RamonaLisa
 
 
     @$overlayBackground = $ '.overlay__background'
-    @$overlayContainers   = $ '.overlay__container'
-    @$overlayClose = @$overlayBackground.find '.overlay__close'
+    @$overlayContainer  = @$overlayBackground.find '.overlay__container'
+    @$overlayView =       @$overlayBackground.find '.overlay__view'
+    @$overlayViewer =     @$overlayBackground.find '.overlay__viewer'
+    @$overlayClose =      @$overlayBackground.find '.overlay__close'
+    @$overlayImage =      @$overlayBackground.find '.overlay__img'
+    @$overlayIframe =     @$overlayBackground.find '.overlay__iframe'
+
     @$overlayClick = $ '.overlay__click'
 
     @$pages = $(".section__pages")

@@ -16,5 +16,5 @@
 
       .accordion__row.accordion__target
         .accordion__cell.accordion__media
-          a(href='images/photos/#{photo.file}' target="_blank")
+          a.overlay__click(href='images/photos/#{photo.file}' target="_blank")
             img.viewer(src='images/photos/#{photo.file}')

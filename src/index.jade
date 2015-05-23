@@ -60,7 +60,11 @@ html.no-js
     include partials/navigation
 
     .overlay__background
-      .overlay__close. &times;
+      .overlay__close &times;
+      .overlay__container
+        .overlay__viewer
+          iframe.overlay__iframe(src='', style="visibility:hidden", onload="this.style.visibility = 'visible'" )
+          img.overlay__img(src='', style="visibility:hidden", onload="this.style.visibility = 'visible'" )
 
 
 
