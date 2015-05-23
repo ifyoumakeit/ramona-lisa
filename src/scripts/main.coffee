@@ -1,10 +1,8 @@
 window.$ = window.jQuery = require "../bower_components/jquery/dist/jquery.min"
 
 [
-  Velocity
   ResponsiveSlides
 ] = [
-  require "../bower_components/velocity/velocity.min"
   require "../bower_components/jquery.responsive-slides/jquery.responsive-slides.min"
 ]
 
@@ -62,19 +60,15 @@ class RamonaLisa
   setupAccordions: ->
     log 'setupAccordions'
     $('.accordion__click').click ->
-      $el = $(@).addClass 'clicked'
-      $next = $el.next(".accordion__target")
-      $viewer = $next.find('.viewer')
 
-      if $next.css('display') is 'block'
-        $el.removeClass 'clicked'
-        $next.velocity 'slideUp', @options
+      $next = $(@).next(".accordion__target")
+
+      if $next.hasClass 'open'
+        $next.removeClass 'open'
         return
 
-      $next.velocity 'slideDown', @options
-
-      $next.siblings('.accordion__target:visible').velocity 'slideUp', @options
-      $el.siblings('.clicked').removeClass 'clicked'
+      $next.addClass 'open'
+      $next.siblings('.open').removeClass 'open'
 
   cacheJQuery: ->
     log 'cacheJQuery'

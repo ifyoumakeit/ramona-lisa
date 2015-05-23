@@ -9,12 +9,17 @@
 .accordion__row {
   position: relative;
   cursor: pointer;
-
 }
 
 .accordion__target {
-  display: none;
-  padding: 5px 5px 0;
+  background: black;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+
+  &.open {
+    max-height: 500px;
+  }
 }
 
 .accordion__click {
@@ -48,8 +53,15 @@
   }
 
   img {
+    width: auto;
     max-width: 600px;
+    max-height: 460px;
+    height: auto;
     margin: 20px auto;
+    display: block;
+  }
+
+  a {
     display: block;
   }
 }

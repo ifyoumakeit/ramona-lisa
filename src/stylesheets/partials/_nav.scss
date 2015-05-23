@@ -101,31 +101,3 @@
     display: none;
   }
 }
-
-/*
-.navigation__item {
-
-  .navigation__link:before {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    width: 8px;
-    height: 8px;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: bottom center;
-    margin-right: 2px;
-  }
-
-  //
-  &:nth-child(1) .navigation__link:before { background-image: url(../images/icon--a.png)}
-  &:nth-child(2) .navigation__link:before { background-image: url(../images/icon--b.png)}
-  &:nth-child(3) .navigation__link:before { background-image: url(../images/icon--c.png)}
-  &:nth-child(4) .navigation__link:before { background-image: url(../images/icon--d.png)}
-  &:nth-child(5) .navigation__link:before { background-image: url(../images/icon--e.png)}
-  &:nth-child(6) .navigation__link:before { background-image: url(../images/icon--f.png)}
-  &:nth-child(7) .navigation__link:before { background-image: url(../images/icon--g.png)}
-  &:nth-child(8) .navigation__link:before { background-image: url(../images/icon--h.png)}
-  &:nth-child(9) .navigation__link:before { background-image: url(../images/icon--i.png)}
-}
-*/
