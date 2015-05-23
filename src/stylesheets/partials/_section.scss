@@ -3,11 +3,10 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
-  padding: 120px 12px;
+  padding: 120px 12px 60px;
 
   @include grid-media-query('m'){
-    padding: 120px 72px;
+    padding: 48px 72px;
   }
 
   &:before {
@@ -30,11 +29,22 @@
   max-width: 960px;
   margin: 24px auto 0;
 
+  &.-center {
+    text-align: center;
+  }
+
   @include grid-media-query('m'){
     vertical-align: middle;
   }
 }
 
+.section--center {
+  text-align: center;
+}
+
+.section--fill {
+  min-height: 100vh;
+}
 
 .section--home .section__container {
   vertical-align: middle;

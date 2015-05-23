@@ -20,7 +20,7 @@ html.no-js
 
 
     main
-      section.section.section--home#home
+      section.section.section--home.section--fill#home
         .section__container
           include partials/home
 
@@ -51,6 +51,11 @@ html.no-js
       section.section.section--performance#performance
         .section__container
           include partials/performance
+
+      section.section.section--contact.section--fill#contact
+        .section__container.-center
+          b Email&nbsp;
+          a(href='mailto:info@wearefree.com' target='_blank') info@wearefree.com
 
     include partials/navigation
 
