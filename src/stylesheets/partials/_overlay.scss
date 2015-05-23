@@ -1,5 +1,9 @@
-body.overlay {
-  overflow: hidden;
+html.overlay {
+
+  &,
+  body {
+    overflow: hidden;
+  }
 
   .overlay__background {
     opacity: 1;
@@ -15,7 +19,7 @@ body.overlay {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.9);
+  background: white;
   z-index: 99;
   pointer-events: none;
 

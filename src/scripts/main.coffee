@@ -60,7 +60,7 @@ class RamonaLisa
       @$overlayContainer.addClass '-photo'
       @$overlayImage.attr('src', src)
 
-    @$body.addClass 'overlay'
+    @$html.addClass 'overlay'
     @$overlayContainer.addClass 'open'
 
     return false
@@ -69,7 +69,7 @@ class RamonaLisa
     $('iframe').attr('src', '')
 
     @$overlayContainer.removeClass('open')
-    @$body.removeClass 'overlay'
+    @$html.removeClass 'overlay'
 
   setupAccordions: ->
     log 'setupAccordions'
@@ -86,7 +86,7 @@ class RamonaLisa
 
   cacheJQuery: ->
     log 'cacheJQuery'
-    @$body   = $ 'body'
+    @$html   = $ 'html'
     @$main   = $ 'main'
 
     @$nav       = $ '.main'
