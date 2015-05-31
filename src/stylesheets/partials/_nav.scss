@@ -3,7 +3,7 @@
   line-height: 1.5;
   position: fixed;
   z-index: 10;
-  left: 3px;
+  left: 0;
   top: 0;
   bottom: 0;
   padding-top: 10px;
@@ -36,6 +36,7 @@
 }
 
 .navigation__link {
+  width: 80px;
   background-color: $color-bg;
   padding: 5px 8px;
   margin: 2px 2px 2px 0;
@@ -66,9 +67,8 @@
     bottom: -1px;
   }
 
-  &:hover {
-
-    &:after {
+  @include grid-media-query('m'){
+    &:hover::after {
       right: -17px;
     }
   }

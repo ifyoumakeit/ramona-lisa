@@ -1,5 +1,4 @@
 window.$ = window.jQuery = require "../bower_components/jquery/dist/jquery.min"
-
 [
   Velocity
   ResponsiveSlides

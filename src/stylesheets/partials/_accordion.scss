@@ -12,13 +12,13 @@
 }
 
 .accordion__target {
-  background: black;
+  background: #fff;
   max-height: 0;
   overflow: hidden;
   transition: max-height $transition;
 
   &.open {
-    max-height: 500px;
+    max-height: 588px;
   }
 }
 
@@ -27,24 +27,56 @@
   padding: 10px 10px 5px;
 }
 
+.accordion__info {
+  position: relative;
+  border: 1px $color-primary solid;
+  padding: 10px;
+
+  @include grid-media-query('m'){
+    display: none;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    z-index: 1;
+    height: 10px;
+    top: -10px;
+    width: 1px;
+    border-left: 1px $color-primary solid;
+  }
+}
+
+
 .accordion__cell {
   font-size: $fontSize-medium;
   line-height: 1.4;
-  display: block;
+  padding: 5px;
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &:not(:first-child) {
+    display: none;
+  }
 
   @include grid-media-query('l'){
+
     width: 20%;
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+
+    &:not(:first-child) {
+      display: inline-block;
+    }
 
     &:first-child {
       width: 400px;
     }
 
     &:nth-child(2) {
-      width: 65px;
+      width: 100px;
     }
 
     &:only-child {
@@ -57,7 +89,7 @@
     max-width: 100%;
     max-height: 460px;
     height: auto;
-    margin: 20px auto;
+    margin: 10px auto;
     display: block;
   }
 

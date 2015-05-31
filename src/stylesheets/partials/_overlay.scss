@@ -38,6 +38,7 @@ html.overlay {
   padding: 5px;
   font-size: $fontSize-large;
   line-height: 1;
+  z-index: 101;
 }
 
 .overlay__container {
@@ -78,7 +79,10 @@ html.overlay {
   &.-photo {
 
     height: 100%;
-    padding: 24px;
+
+    @include grid-media-query('m'){
+      padding: 24px;
+    }
 
     .overlay__img {
       display: block;
@@ -93,12 +97,17 @@ html.overlay {
 .overlay__img {
   display: block;
   border: 5px white solid;
-  box-shadow: 0 0 0 1px $color-primary;
-  margin: 24px auto;
+
+  margin: 36px auto;
   max-height: 800px;
   max-width: 100%;
   width: auto;
   height: auto;
+
+  @include grid-media-query('m'){
+    box-shadow: 0 0 0 1px $color-primary;
+  }
+
 }
 
 
