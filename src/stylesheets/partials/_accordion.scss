@@ -24,13 +24,14 @@
 
 .accordion__click {
   border-top: 1px $color-border solid;
-  padding: 10px 10px 5px;
+  padding: 10px;
 }
 
 .accordion__info {
   position: relative;
   border: 1px $color-primary solid;
   padding: 10px;
+  margin-bottom: 5px;
 
   @include grid-media-query('l'){
     display: none;
