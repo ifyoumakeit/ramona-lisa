@@ -19,7 +19,10 @@
           a.overlay__click(href='images/photos/#{photo.file}' target="_blank")
             img.viewer(src='images/photos/#{photo.file}')
           .accordion__info
-            b #{photo.photographer}<br />
-            span #{photo.source}<br />
-            span #{photo.date}
+            if photo.photographer
+              b #{photo.photographer}<br />
+            if photo.source
+              span #{photo.source}<br />
+            if photo.date
+              span #{photo.date}
 

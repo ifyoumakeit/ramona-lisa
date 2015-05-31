@@ -32,7 +32,7 @@
   border: 1px $color-primary solid;
   padding: 10px;
 
-  @include grid-media-query('m'){
+  @include grid-media-query('l'){
     display: none;
   }
 

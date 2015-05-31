@@ -14,3 +14,11 @@
         .accordion__cell.accordion__media
           a.overlay__click(href='images/performance/#{performance.file}'  target='_blank')
             img.viewer(src='images/performance/#{performance.file}')
+          .accordion__info
+            if performance.photographer
+              b #{performance.photographer}<br />
+            if performance.place
+              span #{performance.place}<br />
+            if performance.date
+              span #{performance.date}
+
