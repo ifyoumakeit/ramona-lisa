@@ -1,12 +1,15 @@
 var gulp            = require('gulp'),
     // this is an arbitrary object that loads all gulp plugins in package.json.
     $           = require("gulp-load-plugins")(),
+    _           = require("lodash"),
     path        = require('path'),
     browserSync = require('browser-sync'),
     reload      = browserSync.reload,
     del         = require('del'),
     ghPages     = require('gulp-gh-pages'),
     browserifyHandlebars = require('browserify-handlebars');
+
+console.log($);
 
 gulp.task('browser-sync', function() {
   browserSync({
@@ -31,18 +34,26 @@ gulp.task('compass', function() {
     .pipe(gulp.dest('dist/stylesheets'));
 });
 
-gulp.task('coffee', function() {
-  return gulp.src('src/scripts/main.coffee', { read: false })
+gulp.task('require', function() {
+  return gulp.src('src/scripts/**/*', { read: false })
     .pipe($.plumber())
     .pipe($.browserify({
       debug: true,
       insertGlobals: false,
-      transform: ['coffeeify', browserifyHandlebars],
+      transform: ['coffeeify'],
       extensions: ['.coffee']
     }))
-    .pipe( $.rename('app.js') )
+    .pipe( $.rename({extname: '.js'}) )
     .pipe( $.uglify())
     .pipe( gulp.dest('dist/scripts') );
+});
+
+gulp.task('cson', function() {
+  return gulp.src('src/data/**/*')
+    .pipe($.plumber())
+    .pipe($.cson())
+    .pipe( $.rename({extname: '.json'}) )
+    .pipe( gulp.dest('./dist/data') );
 });
 
 gulp.task('clean', function(cb) {
@@ -61,16 +72,20 @@ gulp.task('templates', function() {
   return gulp.src('src/*.jade')
     .pipe($.plumber())
     .pipe($.jade({
-      pretty: true
+      data: {
+        photos: _.sortByAll(require('./dist/data/photos.json'), 'title' ).reverse(),
+        performances: require('./dist/data/performance.json')
+      }
     }))
     .pipe( gulp.dest('dist/') )
 });
 
-gulp.task('build', ['compass', 'coffee', 'templates', 'images']);
+gulp.task('build', ['compass', 'cson', 'require', 'templates', 'images']);
 
 gulp.task('serve', ['build', 'browser-sync'], function () {
   gulp.watch('src/stylesheets/**/*.scss',['compass', reload]);
-  gulp.watch('src/scripts/**/*.coffee',['coffee', reload]);
+  gulp.watch('src/data/**/*.coffee',['cson', reload]);
+  gulp.watch('src/scripts/**/*.coffee',['require', reload]);
   gulp.watch('src/images/**/*',['images', reload]);
   gulp.watch('src/**/*.jade',['templates', reload]);
 });

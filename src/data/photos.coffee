@@ -1,4 +1,4 @@
-photos = [
+[
   title: 'Ramona Lisa'
   date: '2014'
   photographer: 'Holland Brown'
@@ -6,28 +6,22 @@ photos = [
   file: 'ramona-lisa-2014-holland-brown-private-collection.jpg'
 ,
   title: 'Work Desk. Villa Medici, Rome'
-  date: '2014'
+  date: '2013'
   photographer: 'Ramona Lisa'
   source: 'Private Collection'
   file: 'work-desk-villa-medici-rome-2014-ramona-lisa-private-collection.jpg'
 ,
   title: 'View While Recording. Villa Medici, Rome'
-  date: '2014'
+  date: '2013'
   photographer: 'Ramona Lisa'
   source: 'Private Collection'
   file: 'view-while-recording-villa-medici-rome-2014-ramona-lisa-private-collection.jpg'
 ,
   title: 'Choreography notes'
-  date: '2014'
+  date: '2013'
   photographer: 'Ramona Lisa'
   source: 'Private Collection'
   file: 'choreography-notes-2014-ramona-lisa-private-collection.jpg'
-,
-  title: 'I Love Our World Composition'
-  date: '2014'
-  photographer: 'Ramona Lisa'
-  source: 'Arcadia'
-  file: 'i-love-our-world-composition-2014-ramona-lisa-arcadia.jpg'
 ,
   title: 'Tour poster'
   date: '2014'
@@ -108,7 +102,7 @@ photos = [
   file: 'fitting-stage-costumes-by-valentina-kova-3-2014-joshua-johnson-atelier-valentina-kova.jpg'
 ,
   title: 'Behind The Scenes with performer Holland Brown'
-  date: '2014'
+  date: '2013'
   photographer: 'Amanda Vincelli'
   source: 'Private Collection'
   file: 'behind-the-scenes-with-performer-holland-brown-2014-amanda-vincelli-private-collection.jpg'
@@ -156,37 +150,37 @@ photos = [
   file: 'backstage-after-record-release-show-2014-eric-epstien-private-collection.jpg'
 ,
   title: 'Ramona Lisa'
-  date: '2014'
+  date: '2013'
   photographer: 'Tim Barber'
   source: 'Arcadia'
   file: 'ramona-lisa-1-2014-tim-barber-arcadia.jpg'
 ,
   title: 'Ramona Lisa'
-  date: '2014'
+  date: '2013'
   photographer: 'Tim Barber'
   source: 'Arcadia'
   file: 'ramona-lisa-2-2014-tim-barber-arcadia.jpg'
 ,
   title: 'Ramona Lisa'
-  date: '2014'
+  date: '2013'
   photographer: 'Tim Barber'
   source: 'Arcadia'
   file: 'ramona-lisa-3-2014-tim-barber-arcadia.jpg'
 ,
   title: 'Ramona Lisa'
-  date: '2014'
+  date: '2013'
   photographer: 'Tim Barber'
   source: 'Arcadia'
   file: 'ramona-lisa-4-2014-tim-barber-arcadia.jpg'
 ,
   title: 'Ramona Lisa'
-  date: '2014'
+  date: '2013'
   photographer: 'Tim Barber'
   source: 'Arcadia'
   file: 'ramona-lisa-5-2014-tim-barber-arcadia.jpg'
 ,
   title: 'Ramona Lisa'
-  date: '2014'
+  date: '2013'
   photographer: 'Tim Barber'
   source: 'Arcadia'
   file: 'ramona-lisa-6-2014-tim-barber-arcadia.jpg'

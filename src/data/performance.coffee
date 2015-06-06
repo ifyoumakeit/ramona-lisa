@@ -1,4 +1,4 @@
-module.exports = [
+[
   title: 'Ramona Lisa Trio, Final Show'
   place: 'Le Poisson Rouge, NYC'
   date: '10.13.14'
