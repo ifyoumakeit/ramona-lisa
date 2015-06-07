@@ -80,7 +80,7 @@ html.overlay {
   }
 
   &.-photo {
-
+    border: 0;
     height: 100%;
 
     @include grid-media-query('m'){
