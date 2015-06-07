@@ -127,37 +127,37 @@
 ,
   title: 'Theora Vorbis'
   date: '12.18.13'
-  photographer: ''
+  photographer: 'Unknown'
   place: 'Babys All Right, NYC'
   file: 'theora-vorbis-babys-all-right-nyc-12-18-13-.jpg'
 ,
   title: 'Agatha Dimm'
   date: '10.19.13'
   place: 'Shea Stadium, Brooklyn'
-  photographer: ''
+  photographer: 'Unknown'
   file: 'agatha-dimm-1-shea-stadium-brooklyn-10-19-13-.jpg'
 ,
   title: 'Agatha Dimm'
   date: '10.19.13'
   place:'Shea Stadium, Brooklyn'
-  photographer: ''
+  photographer: 'Unknown'
   file: 'agatha-dimm-2-shea-stadium-brooklyn-10-19-13-.jpg'
 ,
   title: 'Kimsin Kreft'
   date: '6.13.13'
-  photographer: ''
+  photographer: 'Clocktower Gallery'
   place: 'Clocktower, NYC'
   file: 'kimsin-kreft-1-clocktower-nyc-6-13-13-.jpg'
 ,
   title: 'Kimsin Kreft'
   date: '6.13.13'
-  photographer: ''
+  photographer: 'Clocktower Gallery'
   place: 'Clocktower, NYC'
   file: 'kimsin-kreft-2-clocktower-nyc-6-13-13-.jpg'
 ,
   title: 'Kimsin Kreft'
   date: '5.4.13'
   place: 'Le Poisson Rouge, NYC'
-  photographer: ''
+  photographer: 'Eric Epstein'
   file: 'kimsin-kreft-le-poisson-rouge-nyc-5-4-13-.jpg'
 ]

@@ -42,6 +42,8 @@ html.overlay {
 }
 
 .overlay__container {
+  border: 5px white solid;
+  box-shadow: 0 0 0 1px $color-primary;
   position: absolute;
   z-index: 100;
   top: -99999px;
@@ -69,7 +71,7 @@ html.overlay {
   position: relative;
   width: 100%;
   height: 0;
-  padding-bottom: 57%;
+  padding-bottom: 56.25%;
   margin-bottom: 5px;
 
   .overlay__img {
@@ -112,13 +114,12 @@ html.overlay {
 
 
 .overlay__iframe {
-  border: 5px white solid;
-  box-shadow: 0 0 0 1px $color-primary;
+  border: 0;
   position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
   bottom: 0px;
-  width: calc(100% - 5px);
-  height: calc(100% - 5px);
+  width: 100%;
+  height: 100%;
 }

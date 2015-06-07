@@ -51,7 +51,7 @@ class RamonaLisa
 
     if $el.attr('data-video')
       id = $el.attr('data-video')
-      src = "//www.youtube.com/embed/#{id}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1"
+      src = "//www.youtube.com/embed/#{id}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1&hd=1&vq=large"
       @$overlayIframe.attr('src', src)
     else
       src = $el.attr('href')

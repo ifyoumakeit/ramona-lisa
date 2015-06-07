@@ -18,20 +18,20 @@
   transition: max-height $transition;
 
   &.open {
-    max-height: 588px;
+    max-height: 600px;
   }
 }
 
 .accordion__click {
   border-top: 1px $color-border solid;
-  padding: 10px;
+  padding: 5px;
 }
 
 .accordion__info {
   position: relative;
   border: 1px $color-primary solid;
   padding: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 
   @include grid-media-query('l'){
     display: none;
@@ -53,36 +53,42 @@
 .accordion__cell {
   font-size: $fontSize-medium;
   line-height: 1.4;
-  padding: 5px;
-  width: 100%;
   display: inline-block;
   overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  vertical-align: top;
 
-  &:not(:first-child) {
+  &:nth-child(n+3) {
     display: none;
+  }
+
+  &:first-child {
+    width: 80%
+  }
+
+  &:nth-child(2) {
+    width: 86px;
+  }
+
+  &:only-child {
+    width: 100%;
   }
 
   @include grid-media-query('l'){
 
-    width: 20%;
+    width: 25%;
 
-    &:not(:first-child) {
+    &:first-child:not(:only-child) {
+      width: 40%;
+    }
+
+    &:nth-child(n+3) {
       display: inline-block;
     }
 
-    &:first-child {
-      width: 400px;
-    }
-
     &:nth-child(2) {
-      width: 100px;
+      width: 86px;
     }
 
-    &:only-child {
-      width: 100%;
-    }
   }
 
   img {
