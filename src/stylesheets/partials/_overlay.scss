@@ -62,6 +62,7 @@ html.overlay {
 
     &.-photo {
       border: 0;
+      box-shadow: none;
       top: 0;
       transform: translate(-50%,0);
     }
