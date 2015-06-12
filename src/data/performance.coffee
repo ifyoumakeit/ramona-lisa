@@ -121,7 +121,7 @@
 ,
   title: 'Ramona Lisa'
   date: '4.11.14'
-  place: 'Private Performance, Palm Springs CA'
+  place: 'Private Performance, Palm Springs'
   photographer: 'Vogue.com'
   file: 'ramona-lisa-1-private-performance-palm-springs-ca-4-11-14-vogue-com.jpg'
 ,
