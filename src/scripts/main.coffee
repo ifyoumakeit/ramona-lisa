@@ -38,7 +38,6 @@ class RamonaLisa
 
   setupOverlays: ->
     log 'setupOverlays'
-
     @$overlayClick.click      @showOverlay.bind(@)
     @$overlayClose.click      @hideOverlay.bind(@)
     @$overlayBackground.click @hideOverlay.bind(@)
@@ -52,15 +51,8 @@ class RamonaLisa
 
     if $el.attr('data-video')
       id = $el.attr('data-video')
-      unless @player?
-        @player = new YT.Player 'overlay',
-          videoId: id,
-          playerVars:
-            autoplay: 1
-            color: 'white'
-      else
-        @player.loadVideoById id
-
+      src = "//www.youtube.com/embed/#{id}?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1&hd=1&vq=large&autoplay=1"
+      @$overlayIframe.attr('src', src)
     else
       src = $el.attr('href')
       @$overlayViewer.addClass '-photo'
@@ -73,7 +65,7 @@ class RamonaLisa
     return false
 
   hideOverlay: (e) ->
-    @player.stopVideo()
+    $('iframe').attr('src', '')
 
     @$overlayContainer.removeClass('open')
     @$html.removeClass 'overlay'
@@ -115,20 +107,13 @@ class RamonaLisa
 
     @$pages = $(".section__pages")
 
-  setupYoutube: ->
-    tag = document.createElement('script')
-    tag.src = "https://www.youtube.com/iframe_api"
-    firstScriptTag = document.getElementsByTagName('script')[0]
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
-    window.onYouTubeIframeAPIReady = @setupOverlays.bind(@)
-
   init: ->
     log 'init'
 
     @cacheJQuery()
     @setupNavigation()
+    @setupOverlays()
     @setupAccordions()
-    @setupYoutube()
 
     @$pages.responsiveSlides
       auto: false
