@@ -44,7 +44,7 @@
   title: 'Ramona Lisa Trio'
   date: '8.22.14'
   place: 'Los Globos, Los Angeles'
-  photographer: ''
+  photographer: 'Unknown'
   file: 'ramona-lisa-trio-los-globos-los-angeles-8-22-14-.jpg'
 ,
   title: 'Ramona Lisa Trio'
