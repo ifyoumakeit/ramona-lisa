@@ -5,3 +5,5 @@
 node_modules/*
 src/bower_components/*
 
+
+npm-debug.log

@@ -3,10 +3,10 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  padding: 120px 12px 60px;
+  padding: 0 12px 180px;
 
   @include grid-media-query('m'){
-    padding: 48px 72px;
+    padding: 0 72px 96px;
   }
 
   &:before {

@@ -77,11 +77,19 @@ class RamonaLisa
       $next = $(@).next(".accordion__target")
 
       if $next.hasClass 'open'
+        $(@).removeClass 'open'
         $next.removeClass 'open'
         return
 
-      $next.addClass 'open'
       $next.siblings('.open').removeClass 'open'
+      $(@).addClass 'open'
+      $next.addClass 'open'
+
+      $(@).velocity 'scroll',
+        duration: 600
+        easing: 'ease-in-out'
+        offset: -12
+
 
   cacheJQuery: ->
     log 'cacheJQuery'
