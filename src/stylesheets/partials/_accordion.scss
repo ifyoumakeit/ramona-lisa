@@ -15,9 +15,9 @@
   background: #fff;
   max-height: 0;
   overflow: hidden;
-  transition: max-height $transition;
 
   &.open {
+    transition: max-height $transition;
     max-height: 600px;
   }
 }
