@@ -85,10 +85,12 @@ class RamonaLisa
       $(@).addClass 'open'
       $next.addClass 'open'
 
+      ###
       $(@).velocity 'scroll',
         duration: 600
         easing: 'ease-in-out'
         offset: -12
+      ###
 
 
   cacheJQuery: ->
